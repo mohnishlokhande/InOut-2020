@@ -1,0 +1,9 @@
+
+.cardho{
+    color: #ffffff;
+    background-color: #11C865;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
