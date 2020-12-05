@@ -1,0 +1,49 @@
+
+.mainContainer{
+    background-color: #11C865;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    
+}
+.backphoto{
+    background-image: url(./backPhoto.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.regiBox{
+    background-color: #0a8543b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 68vh;
+    width: 50vw;
+    /* backdrop-filter: blur(4px); */
+}
+.headingReg{
+    color: #DD7F30;
+    font-weight: bold;
+    /* text-decoration-line: underline; */
+    text-decoration: underline;
+}
+.btnReg{
+    color: aliceblue;
+    font-weight: bold;
+    background-color: #DD7F30;
+}
+
+@media only screen and (max-width: 769px){
+    .regiBox{
+        width: 100vw;
+    }
+
+}
