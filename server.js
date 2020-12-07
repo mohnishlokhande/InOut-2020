@@ -4,6 +4,26 @@ const bcrypt = require('bcrypt')    // for hashing passwords
 //const router = express.Router();
 var routes = require('./routes/index'); //requre routes pbject
 
+//mysql database
+var mysql = require('mysql');
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: " ",
+    port: '3306',
+    database : 'inout'
+  });
+con.connect((err) => {
+    if (err)  
+    {
+        console.log("connection failed !");
+        return 
+    }
+
+    return console.log("connected !")
+
+});
+
 app.use(express.urlencoded({ extended: true }));    //for accessing req.body.name
 
 var users = []; //to mimic users in database
@@ -53,4 +73,6 @@ app.post('/login', (req, res) => {
     //qury database 
 })
     
-console.log('Running at Port 3000');
+
+
+console.log('Running at Port 3001');
