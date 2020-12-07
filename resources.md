@@ -7,4 +7,7 @@
 2 variables defined in a file are scoped to that file/module  
 3 we have to export the req code to and variables to use them in different modules  
 [express.urlencoded()](https://stackoverflow.com/questions/23259168/what-are-express-json-and-express-urlencoded/51844327)  
-input attributes (input type="text" id="name" name="name" required)
+input attributes (input type="text" id="name" name="name" required)  
+[How to create a React frontend and a Node/Express backend and connect them](https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/)
+[How Does the Frontend Communicate with the Backend?](https://vsupalov.com/how-backend-and-frontend-communicate/#:~:text=Backend%20code%20is%20built%20to,interpreted%20while%20rendering%20a%20page.)  
+[Database models](https://www.lucidchart.com/pages/database-diagram/database-models)

@@ -1,14 +1,12 @@
 const express = require('express');
-// const { accessSync } = require('fs');
 const app = express();
-// const path = require('path');
 const bcrypt = require('bcrypt')    // for hashing passwords
-// const router = express.Router();
-var routes = require('./routes/index');
+//const router = express.Router();
+var routes = require('./routes/index'); //requre routes pbject
 
 app.use(express.urlencoded({ extended: true }));    //for accessing req.body.name
 
-var users = [];
+var users = []; //to mimic users in database
 
 app.set('view-engine', 'ejs')       //setting view engine to ejs
 
