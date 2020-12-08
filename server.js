@@ -13,23 +13,44 @@ app.listen(process.env.port || 3000);       //starting server
 
 //mysql database
 var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: " ",
-    port: '3306',
-    database : 'inout'
+    host: "mysql-16437-0.cloudclusters.net",
+    user: "inout",
+    password: "inout2020",
+    port: '16437',
+    database : 'inout2020'
   });
+
+
 con.connect((err) => {
     if (err)  
     {
         console.log("connection failed !");
         return 
     }
-
-    return console.log("connected !")
+    return console.log("connected !");
+    
+    // var sql = "CREATE TABLE registerdetails(id int AUTO_INCREMENT, username VARCHAR(30), email VARCHAR(200), password VARCHAR(30),\
+    //  PRIMARY KEY(id))";
+    // con.query(sql, function(err, result){
+    //     if(err){ 
+    //         throw err;
+    //     }
+    //     console.log("created table");
+    // });
 
 });
 
+app.get('/createregistertable', (req, res) => {
+    let sql = 'CREATE TABLE registerdetails(id int AUTO_INCREMENT, username VARCHAR(30), email VARCHAR(200), password VARCHAR(30), PRIMARY KEY(id))';
+    con.query(sql, (err, result) =>{
+        if(err){ 
+            console.log(err)
+            return
+        }
+        console.log(result);
+        res.send('Table created.......');
+    })
+})
 
 //setting routes 
 
@@ -51,12 +72,12 @@ app.post('/register', async (req, res) => {
         //if user is not registered then create a new user in the database
         //store this user in database
 
-        // users.push({
-        //     id: Date.now().toString(),
-        //     name: req.body.name,
-        //     email: req.body.email,
-        //     password: hashedPass,
-        // })
+        users.push({
+            // id: Date.now().toString(),
+            // name: req.body.name,
+            email: req.body.email,
+            password: hashedPass,
+        })
 
         res.redirect('/login');
     }
