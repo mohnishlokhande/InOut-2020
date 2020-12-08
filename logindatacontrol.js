@@ -1,13 +1,13 @@
 const express = require('express')
-const cryptr = require('cryptr');
-cryptr = new cryptr('myTotalSecretKey');
+const bcrypt = require('bcrypt')    // for hashing passwords
+// cryptr = new cryptr('myTotalSecretKey');
 var con = require('mysql');
 
 module.exports.authenticate = (req, res) => {
     var username = req.body.username;
     var password = req.body.password;
     if (username && password) {
-        con.query('SELECT * FROM users WHERE email = ?',[email], function (error, results, fields) {
+        con.query('SELECT * FROM Registerdetails WHERE email = ?',[email], function (error, results, fields) {
             if (error) {
                 res.send('there are some error with query')
             }else{             
