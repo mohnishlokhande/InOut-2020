@@ -5,52 +5,16 @@ const app = express();
 const bcrypt = require('bcrypt')    // for hashing passwords
 // const router = express.Router();
 var routes = require('./routes/index');
-
+var cors = require('cors')
+var session = require('express-session');
 //mysql database
-var mysql = require('mysql');
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    // port: '16437',
-    // database : 'inout2020'
-  });
+const con = require('./mysql')
 
 
-con.connect((err) => {
-    if (err)  
-    {
-        console.log("connection failed !");
-        return 
-    }
-    return console.log("connected !");
-    
-    // var sql = "CREATE TABLE registerdetails(id int AUTO_INCREMENT, username VARCHAR(30), email VARCHAR(200), password VARCHAR(30),\
-    //  PRIMARY KEY(id))";
-    // con.query(sql, function(err, result){
-    //     if(err){ 
-    //         throw err;
-    //     }
-    //     console.log("created table");
-    // });
-
-});
-
-app.get('/createregistertable', (req, res) => {
-    let sql = 'CREATE TABLE registerdetails(id int AUTO_INCREMENT, username VARCHAR(30), email VARCHAR(200), password VARCHAR(30), PRIMARY KEY(id))';
-    con.query(sql, (err, result) =>{
-        if(err){ 
-            console.log(err)
-            return
-        }
-        console.log(result);
-        res.send('Table created.......');
-    })
-})
-
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));    //for accessing req.body.name
 
-var users = [];
+// var users = [];
 
 app.set('view-engine', 'ejs')       //setting view engine to ejs
 
@@ -75,13 +39,21 @@ app.post('/register', async (req, res) => {
         //check if the user email is registered or not
         //if user is not registered then create a new user in the database
         //store this user in database
-
-        users.push({
-            // id: Date.now().toString(),
-            // name: req.body.name,
-            email: req.body.email,
-            password: hashedPass,
-        })
+        //Inser details into  Registeration table for 
+        // var users={
+        //     // id: Date.now().toString(),
+        //     "name": req.body.name,
+        //     "email": req.body.email,
+        //     "password": hashedPass,
+        //     "contact" : req.body.contact
+        // }
+        // con.query('INSERT INTO users SET ?',users,  (err, results, fields) =>{
+        //     if (err) {
+        //       res.send('there is something error')
+        //     }else{
+        //         res.send('user registered sucessfully')
+        //     }
+        //   });
 
         res.redirect('/login');
     }
@@ -92,9 +64,10 @@ app.post('/register', async (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-    var email = req.body.email;
+    var username = req.body.username;
     var password = req.body.password;
-    //qury database 
+    //qury database SELECT details from  Registeration table for login 
+
 })
     
 
