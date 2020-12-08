@@ -7,7 +7,7 @@ var routes = require('./routes/index'); //requre routes pbject
 app.use(express.urlencoded({ extended: true }));    //for accessing req.body.name
 app.set('view-engine', 'ejs')    //setting view engine to ejs
 
-// var users = []; //to mimic users in database
+var users = []; //to mimic users in database
 
 app.listen(process.env.port || 3000);       //starting server   
 
@@ -95,4 +95,4 @@ app.post('/login', (req, res) => {
     
 
 
-console.log('Running at Port 3001');
+console.log('Running at Port 3000');
