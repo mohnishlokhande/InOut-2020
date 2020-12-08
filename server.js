@@ -9,11 +9,11 @@ var routes = require('./routes/index');
 //mysql database
 var mysql = require('mysql');
 var con = mysql.createConnection({
-    host: "mysql-16437-0.cloudclusters.net",
-    user: "inout",
-    password: "inout2020",
-    port: '16437',
-    database : 'inout2020'
+    host: "localhost",
+    user: "root",
+    password: "root",
+    // port: '16437',
+    // database : 'inout2020'
   });
 
 
