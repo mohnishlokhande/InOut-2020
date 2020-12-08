@@ -1,11 +1,17 @@
 const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt')    // for hashing passwords
-//const router = express.Router();
+const mysql = require('mysql');
 var routes = require('./routes/index'); //requre routes pbject
 
+app.use(express.urlencoded({ extended: true }));    //for accessing req.body.name
+app.set('view-engine', 'ejs')    //setting view engine to ejs
+
+// var users = []; //to mimic users in database
+
+app.listen(process.env.port || 3000);       //starting server   
+
 //mysql database
-var mysql = require('mysql');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -24,13 +30,6 @@ con.connect((err) => {
 
 });
 
-app.use(express.urlencoded({ extended: true }));    //for accessing req.body.name
-
-var users = []; //to mimic users in database
-
-app.set('view-engine', 'ejs')       //setting view engine to ejs
-
-app.listen(process.env.port || 3000);       //starting server   
 
 //setting routes 
 
