@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import './HomePg.css';
-
+import Car from '../Image/homeCar.png'
 class Home extends Component{
 
     render(){
-        return(
-            <div>
+        return( 
+            <div className="outerdivHome">
                 <div className="cardho">
-                    <h3>Welcome To Home Page </h3>&nbsp;
-                    <br/>
-                    <h2>:')</h2>
+                    {/* <img src={Car} alt="car" /> */}
                 </div>
+                <br /><br />
+                <button className="registerbtn"> Register</button>
             </div>
         );
     }

@@ -1,9 +1,31 @@
 
-.cardho{
+.outerdivHome{
     color: #ffffff;
-    background-color: #11C865;
+    background-color: #000347;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     height: 100vh;
+    flex-direction: column;
+}
+.cardho{
+    width: 100%;
+    /* height: 100%; */
+}
+.cardho img{
+    width: 100%;
+}
+.registerbtn{
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0px 19px;
+    line-height: 48px;
+    outline: none !important;
+    color:#000347;
 }
