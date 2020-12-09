@@ -1,7 +1,7 @@
 const express = require('express')
 const bcrypt = require('bcrypt')    // for hashing passwords
 // cryptr = new cryptr('myTotalSecretKey');
-var con = require('mysql');
+var con = require('./mysql');
 
 module.exports.authenticate = (req, res) => {
     var username = req.body.username;
@@ -12,7 +12,7 @@ module.exports.authenticate = (req, res) => {
                 res.send('there are some error with query')
             }else{             
               if(results.length >0){
-        decryptedString = cryptr.decrypt(results[0].password);
+        decryptedString = bcrypt.decrypt(results[0].password);
                   if(password==decryptedString){
                       res.send('successfully authenticated')
                   }else{
