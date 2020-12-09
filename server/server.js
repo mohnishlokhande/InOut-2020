@@ -9,7 +9,7 @@ app.set('view-engine', 'ejs')    //setting view engine to ejs
 
 var users = []; //to mimic users in database
 
-app.listen(process.env.port || 3000);       //starting server   
+app.listen(process.env.port || 9000);       //starting server   
 
 //mysql database
 var con = mysql.createConnection({
