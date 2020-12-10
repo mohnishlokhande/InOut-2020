@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: true }));    //for accessing req.body.nam
 app.set('view-engine', 'ejs')    //setting view engine to ejs
 
 // var users = []; //to mimic users in database
-app.listen(process.env.port || 3001);       //starting server   
+app.listen(process.env.port || 9000);       //starting server   
 
 //mysql database
 var con = require("./mysql");
@@ -16,4 +16,4 @@ var con = require("./mysql");
 app.use('/', routes);
 app.use('/auth', require('./routes/auth'))
 
-console.log('Running at Port 3001');
+console.log('Running at Port 9000');
