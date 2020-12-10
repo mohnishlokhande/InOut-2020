@@ -11,10 +11,10 @@ module.exports.register=async(req,res) =>{
         "name":req.body.name,
         "email":req.body.email,
         "password":encryptedString,
-        "contact" : req.body.contact
+        // "contact" : req.body.contact
         
     }
-    connection.query('INSERT INTO Registerdetails SET ?',users,  (error, results) => {
+    connection.query('INSERT INTO Registerdetails SET ?',users,  (error, results, fields) => {
       if (error) {
         res.json({
             message:'there are some error with query'
