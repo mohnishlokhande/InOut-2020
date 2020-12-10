@@ -11,7 +11,7 @@ class App extends Component{
 
   }
   callAPI() {
-    fetch("https://localhost:3001/testAPI")
+    fetch("http://localhost:3001/testAPI")
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }));
   }
@@ -23,9 +23,9 @@ class App extends Component{
     return (
       <BrowserRouter>
         <div className="App">
-        
+        <p>{this.state.apiResponse}</p>
           <Main></Main>
-          <p>{this.state.apiResponse}</p>
+          
         </div>
       </BrowserRouter>
     );

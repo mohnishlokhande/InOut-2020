@@ -10,7 +10,7 @@ app.set('view-engine', 'ejs')    //setting view engine to ejs
 app.use(cors());
 
 // var users = []; //to mimic users in database
-app.listen(process.env.port || 9000);       //starting server   
+app.listen(process.env.port || 3001);       //starting server   
 
 //mysql database
 var con = require("./mysql");
@@ -24,4 +24,4 @@ app.use('/testAPI', testAPI);
 
 app.use('/auth', require('./routes/auth'))
 
-console.log('Running at Port 9000');
+console.log('Running at Port 3001');
