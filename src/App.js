@@ -1,31 +1,32 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
 import Main from './component/Main';
 import { BrowserRouter } from 'react-router-dom';
 
 
-class App extends Component{
+class App extends React.Component{
   constructor(props) {
-    super(props);
+    super(props)
     this.state = { apiResponse: "" };
 
   }
   callAPI() {
-    fetch("https://localhost:3001/testAPI")
+    fetch("http://localhost:9000/testAPI")
       .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }));
+      .then(res => this.setState({ apiResponse: res }))
+      .catch(err=>err);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.callAPI();
   }
   render(){
     return (
       <BrowserRouter>
         <div className="App">
+        <p className="apiintro">{this.state.apiResponse}</p>
         
           <Main></Main>
-          <p>{this.state.apiResponse}</p>
         </div>
       </BrowserRouter>
     );
