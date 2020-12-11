@@ -24,9 +24,9 @@ class App extends React.Component{
     return (
       <BrowserRouter>
         <div className="App">
-        <p className="apiintro">{this.state.apiResponse}</p>
-        
+        {/* <p className="apiintro"> {this.state.apiResponse}</p> */}
           <Main></Main>
+          
         </div>
       </BrowserRouter>
     );

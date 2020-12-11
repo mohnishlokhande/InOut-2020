@@ -1,23 +1,51 @@
 
 .outerdivHome{
     color: #ffffff;
-    background-color: #000347;
+    background-color: white;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     height: 100vh;
-    flex-direction: column;
+    flex-direction: row;
+}
+.cardho, .carpic{
+    width: 50%;
+    display: flex;
+    height: 100%;
+}
+.carpic img{
+    width: 100%;
 }
 .cardho{
-    width: 100%;
-    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
 }
-.cardho img{
-    width: 100%;
+.logodiv{
+    height: 40%;
+    width: 70%;
+    padding: 39px 0px;
+    text-align: left;
+
 }
-.registerbtn{
+.parkingdetails{
+    color: green;
+    width: 70%;
+    text-align: justify;
+}
+.parkingdetails h1{
+    font-weight: bold;
+}
+.btndiv{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.btndiv button{
     cursor: pointer;
-    background-color: white;
+    background-color: yellow;
     border: none;
     border-radius: 15px;
     font-family: Lato;
@@ -27,5 +55,5 @@
     padding: 0px 19px;
     line-height: 48px;
     outline: none !important;
-    color:#000347;
+    color:green;
 }
