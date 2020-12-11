@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
     user: "root",
     password: "root",
     // port: '16437',
-    // database : 'inout2020'
+    database : 'inoutdatabase'
   });
 
   connection.connect((err) => {
