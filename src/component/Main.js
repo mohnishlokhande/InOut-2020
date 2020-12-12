@@ -2,24 +2,32 @@ import React, {Component} from 'react';
 import Home from './HomePg/HomePg';
 import Register from './Register/Register';
 // import login from './login/login';
-
-import { Switch,Route, Redirect } from 'react-router-dom';
-import Gmap from './MapPg/MapPg';
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './login/login';
-import SearchPg from './Search/Search';
-
+import Demo from './enablelocation';
+import Gmap from './MapPg/MapPg';
 class Main extends Component {
     render(){
+
+        // const Maploc = () => {
+        //     return(
+        //       <Gmap 
+        //         la={this.props.coords.latitude}
+        //         lo={this.props.coords.longitude}
+        //       />
+        //     );
+        // };
+
         return(
-            <div>
-                <Home/> 
-                <Register/>
-                <Gmap/> 
-            
-                <Login />
-                <SearchPg/>
-            </div>
+            <BrowserRouter>
+            <Switch>
+                <Route path="/" component={Home} exact />
+                <Route path="/register" component={Register} />
+                <Route path="/enablelocation" component={Demo} />  
+                <Route path="/login" component={Login} />
+                <Route path="/mapG" component={Gmap} />
+            </Switch>
+        </BrowserRouter>
         );
     }
 }

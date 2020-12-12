@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Label, Input,Col, FormFeedback, Row } from 'reactstrap';
- import './Register.css';
-
+import './Register.css';
+import Logo from '../Image/logo.png'
 
 export default class Register extends Component{
 
@@ -9,6 +9,7 @@ export default class Register extends Component{
     render(){
         return(
             <div className="mainContainer">
+                    <div className="logodiv"><img src={Logo} alt="logo" /></div>
                 <div className="backphoto">
                 <div>
                     <h2 className="headingReg">Easy Parking</h2>

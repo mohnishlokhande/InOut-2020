@@ -4,14 +4,17 @@ import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as parkDate from "./data/skateboard-parks.json";
 import './MapPg.css';
 import Geocoder from 'react-map-gl-geocoder';
-import 'mapbox-gl/dist/mapbox-gl.css'
-import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css'
+import 'mapbox-gl/dist/mapbox-gl.css';
+import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import Demo from '../enablelocation';
 
 
-export default function Gmap() {
+//    latitude: 28.651790,
+//    longitude: 77.235694,
+export default function Gmap(props) {
   const [viewport, setViewport] = useState({
-    latitude: 28.651790,
-    longitude: 77.235694,
+    latitude: props.la,
+    longitude: props.lo,
     zoom: 12
   });
   const [selectedPark, setSelectedPark] = useState(null);
