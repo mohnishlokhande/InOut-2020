@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './login/login';
 import Demo from './enablelocation';
 import Gmap from './MapPg/MapPg';
+import SearchPg from './Search/Search';
 class Main extends Component {
     render(){
 
@@ -26,6 +27,8 @@ class Main extends Component {
                 <Route path="/enablelocation" component={Demo} />  
                 <Route path="/login" component={Login} />
                 <Route path="/mapG" component={Gmap} />
+                <Route path="/search" component={SearchPg} />
+
             </Switch>
         </BrowserRouter>
         );

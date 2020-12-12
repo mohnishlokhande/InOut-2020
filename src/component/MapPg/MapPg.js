@@ -15,7 +15,7 @@ export default function Gmap(props) {
   const [viewport, setViewport] = useState({
     latitude: props.la,
     longitude: props.lo,
-    zoom: 12
+    zoom: 12 
   });
   const [selectedPark, setSelectedPark] = useState(null);
 
@@ -71,6 +71,13 @@ export default function Gmap(props) {
           setViewport(viewport);
         }}
       >
+          <Marker
+            latitude={props.la}
+            longitude={props.lo}>
+            <img src="/myloc.png" alt="Skate Park Icon" 
+              className="igb" />
+          </Marker>
+
         {parkDate.features.map(park => (
           <Marker
             key={park.properties.PARK_ID}
