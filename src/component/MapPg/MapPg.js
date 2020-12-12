@@ -1,17 +1,40 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as parkDate from "./data/skateboard-parks.json";
+import './MapPg.css';
+import Geocoder from 'react-map-gl-geocoder';
+import 'mapbox-gl/dist/mapbox-gl.css'
+import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css'
+
 
 export default function Gmap() {
   const [viewport, setViewport] = useState({
-    latitude: 45.4211,
-    longitude: -75.6903,
-    width: "100vw",
-    height: "100vh",
-    zoom: 10
+    latitude: 28.651790,
+    longitude: 77.235694,
+    zoom: 12
   });
   const [selectedPark, setSelectedPark] = useState(null);
+
+ // const geocoderContainerRef = useRef();
+  const mapRef = useRef();
+  const handleViewportChange = useCallback(
+    (newViewport) => setViewport(newViewport),
+    []
+  );
+  
+  const handleGeocoderViewportChange = useCallback(
+    (newViewport) => {
+      const geocoderDefaultOverrides = { transitionDuration: 1000 };
+ 
+      return handleViewportChange({
+        ...newViewport,
+        ...geocoderDefaultOverrides
+      });
+    },
+    []
+  );
+
 
   useEffect(() => {
     const listener = e => {
@@ -25,13 +48,22 @@ export default function Gmap() {
       window.removeEventListener("keydown", listener);
     };
   }, []);
+//pk.eyJ1IjoibW9obmlzaGxva2hhbmRlIiwiYSI6ImNraWdidHRmMzBzOXQydG54aG41dWhmN2YifQ.yTyJynC4EjpNfn-rIVhXEQ
 
-  return (
-    <div>
+  return ( 
+    <div className="mainContainer">
+      <div className="con">
+        {/* <div
+          ref={geocoderContainerRef}
+          style={{ position: "absolute", top: 20, left: 20, zIndex: 1 }}
+        /> */}
       <ReactMapGL
+        ref={mapRef}
         {...viewport}
-        mapboxApiAccessToken="pk.eyJ1IjoibW9obmlzaGxva2hhbmRlIiwiYSI6ImNraWdidHRmMzBzOXQydG54aG41dWhmN2YifQ.yTyJynC4EjpNfn-rIVhXEQ"
-        mapStyle="mapbox://styles/leighhalliday/cjufmjn1r2kic1fl9wxg7u1l4"
+        width="100vw"
+        height="100vh"
+        mapboxApiAccessToken="pk.eyJ1IjoibW9obmlzaGxva2hhbmRlIiwiYSI6ImNraWs4eHN3bjA1bHgyc2xiZXo1aDEwbWwifQ.5Aewi_ZHAZCBGnaljgyXtw"
+        mapStyle="mapbox://styles/mapbox/streets-v11"
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
@@ -43,13 +75,15 @@ export default function Gmap() {
             longitude={park.geometry.coordinates[0]}
           >
             <button
-              className="marker-btn"
+              className="marker-btn bti"
               onClick={e => {
                 e.preventDefault();
                 setSelectedPark(park);
               }}
             >
-              <img src="/skateboarding.svg" alt="Skate Park Icon" />
+              <img src="/car-parking.jpg" alt="Skate Park Icon" 
+              //  height="15" width="15" 
+                className="igb" />
             </button>
           </Marker>
         ))}
@@ -68,7 +102,18 @@ export default function Gmap() {
             </div>
           </Popup>
         ) : null}
+
+        <Geocoder
+    
+          mapRef={mapRef}
+        // containerRef={geocoderContainerRef}
+          onViewportChange={handleGeocoderViewportChange}
+          mapboxApiAccessToken="pk.eyJ1IjoibW9obmlzaGxva2hhbmRlIiwiYSI6ImNraWs4eHN3bjA1bHgyc2xiZXo1aDEwbWwifQ.5Aewi_ZHAZCBGnaljgyXtw"
+          position="top-left"
+        />
+
       </ReactMapGL>
+      </div>
     </div>
   );
 }

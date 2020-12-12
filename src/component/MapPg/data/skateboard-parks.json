@@ -10,7 +10,7 @@
       "properties": {
         "PARK_ID": 960,
         "FACILITYID": 28014,
-        "NAME": "Bearbrook Skateboard Park",
+        "NAME": "Acchi wali parking",
         "NAME_FR": "Planchodrome Bearbrook",
         "ADDRESS": "8720 Russell Road",
         "ADDRESS_FR": "8720, chemin Russell",
@@ -32,7 +32,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.3372987731628, 45.383321536272049]
+        "coordinates": [77.197216, 28.671371]
       }
     },
     {

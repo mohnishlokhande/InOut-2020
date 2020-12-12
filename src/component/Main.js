@@ -7,6 +7,7 @@ import { Switch,Route, Redirect } from 'react-router-dom';
 import Gmap from './MapPg/MapPg';
 
 import Login from './login/login';
+import SearchPg from './Search/Search';
 
 class Main extends Component {
     render(){
@@ -14,9 +15,10 @@ class Main extends Component {
             <div>
                 <Home/> 
                 <Register/>
-                <Gmap/>
+                <Gmap/> 
             
                 <Login />
+                <SearchPg/>
             </div>
         );
     }
