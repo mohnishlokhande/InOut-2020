@@ -33,6 +33,13 @@
 .par{
     margin: 10px;
     text-align: justify;
+    font-weight: bolder;
+}
+.parA{
+    margin: 10px;
+    text-align: justify;
+    color: #ffffff;
+    font-weight: bolder;
 }
 .parkRow{
     display: flex;
@@ -41,6 +48,14 @@
 }
 .searchHead{
     color: #DD7F30;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
+.rowS{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen and (max-width: 769px){

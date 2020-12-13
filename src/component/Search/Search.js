@@ -31,6 +31,8 @@ export default class SearchPg extends Component{
                 </CardBody>
               </Card> */}
               <p className="par">{park.properties.NAME}</p>
+              <hr/>
+              <p className="parA">{park.properties.ADDRESS}</p>
             </div>
           );
         };
@@ -49,8 +51,10 @@ export default class SearchPg extends Component{
                 <Header/>
             <div className="smainContainer">
                 <div className="dataSearch">
-                    <h2 className="searchHead">Search</h2>
-                    <Input label="Search parking" icon="search" onChange={this.onchange} className="inputS" placeholder="Search parking name here..."/>
+                <h2 className="searchHead">-|Search|-</h2>
+                    <div className="rowS"><span className="fa fa-search fa-lg"></span><p>&nbsp;&nbsp;</p>
+                        <Input label="Search parking" icon="search" onChange={this.onchange} className="inputS" placeholder="Search parking name here..."/>
+                    </div>
                 </div>
                 <div className="parkRow ">
                     {
