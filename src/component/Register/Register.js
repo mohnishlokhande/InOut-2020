@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Form, FormGroup, Label, Input,Col, FormFeedback, Row } from 'reactstrap';
 import './Register.css';
 import Logo from '../Image/logo.png'
+import { Link } from 'react-router-dom';
 
 export default class Register extends Component{
 
@@ -76,7 +77,7 @@ export default class Register extends Component{
                 </div>
                 <br/>
                 <div>
-                    <h5 className="headingReg">Already have an account? Log In</h5>
+                    <Link to="/login"><h5 className="headingReg">Already have an account? Log In</h5></Link>
                 </div>
                 
             </div>

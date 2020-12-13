@@ -8,6 +8,8 @@ import Demo from './enablelocation';
 import Gmap from './MapPg/MapPg';
 import SearchPg from './Search/Search';
 import Select from './Select/Select';
+import Profile from './UserProfile/Profile';
+
 class Main extends Component {
     render(){
 
@@ -30,6 +32,7 @@ class Main extends Component {
                 <Route path="/mapOrig" component={Gmap} />
                 <Route path="/search" component={SearchPg} />
                 <Route path="/select" component={Select} />
+                <Route path="/userprofile" component={Profile} />
             </Switch>
         </BrowserRouter>
         );

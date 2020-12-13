@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import {Form, FormGroup, Label, Input,Col, FormFeedback, Row } from 'reactstrap';
  import './login.css';
 
@@ -59,7 +60,7 @@ export default class Login extends Component{
                 </div>
                 <br/>
                 <div>
-                    <h5 className="headingReg">Already have an account? Log In</h5>
+                    <Link to="/register"><h5 className="headingReg">Does not have an account? Register here!</h5></Link>
                 </div>
                 
             </div>
