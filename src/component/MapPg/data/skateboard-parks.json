@@ -40,7 +40,7 @@
       "properties": {
         "PARK_ID": 1219,
         "FACILITYID": 28001,
-        "NAME": "Bob MacQuarrie Skateboard Park (SK8 Extreme Park)",
+        "NAME": "Acchi wali parkin",
         "NAME_FR": "Planchodrome Bob-MacQuarrie (Parc SK8 Extreme)",
         "ADDRESS": "1490 Youville Drive",
         "ADDRESS_FR": "1490, promenade Youville",
@@ -280,7 +280,7 @@
       "properties": {
         "PARK_ID": 657,
         "FACILITYID": 28000,
-        "NAME": "Roving Skateboard Park Location",
+        "NAME": "Mohnish ka ghr!!",
         "NAME_FR": "Lieu de planchodrome itinérant",
         "ADDRESS": "110 Malvern Drive",
         "ADDRESS_FR": "110, promenade Malvern",
@@ -302,7 +302,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.760235255689508, 45.280622216516925]
+        "coordinates": [78.928858, 22.027980]
       }
     },
     {

@@ -7,6 +7,7 @@ import Login from './login/login';
 import Demo from './enablelocation';
 import Gmap from './MapPg/MapPg';
 import SearchPg from './Search/Search';
+import Select from './Select/Select';
 class Main extends Component {
     render(){
 
@@ -24,11 +25,11 @@ class Main extends Component {
             <Switch>
                 <Route path="/" component={Home} exact />
                 <Route path="/register" component={Register} />
-                <Route path="/enablelocation" component={Demo} />  
+                <Route path="/map" component={Demo} />  
                 <Route path="/login" component={Login} />
-                <Route path="/mapG" component={Gmap} />
+                <Route path="/mapOrig" component={Gmap} />
                 <Route path="/search" component={SearchPg} />
-
+                <Route path="/select" component={Select} />
             </Switch>
         </BrowserRouter>
         );
