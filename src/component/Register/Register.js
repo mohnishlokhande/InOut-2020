@@ -9,7 +9,7 @@ export default class Register extends Component{
     render(){
         return(
             <div className="mainContainer">
-                    <div className="logodiv"><img src={Logo} alt="logo" /></div>
+                <div className="logodiv"><img src={Logo} alt="logo" /></div>
                 <div className="backphoto">
                 <div>
                     <h2 className="headingReg">Easy Parking</h2>
