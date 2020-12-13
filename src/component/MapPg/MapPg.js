@@ -7,6 +7,7 @@ import Geocoder from 'react-map-gl-geocoder';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import Demo from '../enablelocation';
+import NavMap from "./Navbar";
 
 
 //    latitude: 28.651790,
@@ -15,7 +16,7 @@ export default function Gmap(props) {
   const [viewport, setViewport] = useState({
     latitude: props.la,
     longitude: props.lo,
-    zoom: 12
+    zoom: 12 
   });
   const [selectedPark, setSelectedPark] = useState(null);
 
@@ -54,12 +55,15 @@ export default function Gmap(props) {
 //pk.eyJ1IjoibW9obmlzaGxva2hhbmRlIiwiYSI6ImNraWdidHRmMzBzOXQydG54aG41dWhmN2YifQ.yTyJynC4EjpNfn-rIVhXEQ
 
   return ( 
+    <>
+    <NavMap/>
     <div className="mainContainer">
       <div className="con">
-        {/* <div
-          ref={geocoderContainerRef}
-          style={{ position: "absolute", top: 20, left: 20, zIndex: 1 }}
-        /> */}
+         <div 
+          style={{ position: "absolute", top: 20, right: 20, zIndex: 12 }}>
+            <img src="/gps2.webp" alt="Skate Park Icon" 
+              className="igb"  onClick={() => window.location.reload(false)}/> 
+        </div> 
       <ReactMapGL
         ref={mapRef}
         {...viewport}
@@ -71,6 +75,13 @@ export default function Gmap(props) {
           setViewport(viewport);
         }}
       >
+          <Marker
+            latitude={props.la}
+            longitude={props.lo}>
+            <img src="/myloc.png" alt="My location" 
+              className="igb" />
+          </Marker>
+
         {parkDate.features.map(park => (
           <Marker
             key={park.properties.PARK_ID}
@@ -118,6 +129,7 @@ export default function Gmap(props) {
       </ReactMapGL>
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,10 +1,66 @@
-.mainContainer{
+.smainContainer{
     background-color: #11C865;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+
+    width: 100%;
     flex-direction: column;
     
+}
+.dataSearch{
+    margin: 15px;
+    
+    
+}
+.co{
+    height: 100vh;
+    background-color: #11C865;
+}
+.btnMap{
+    color: aliceblue;
+    font-weight: bold;
+}
+.onSearch{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: darkgrey;
+}
+.inputS{
+    width: 20vw;
+}
+.par{
+    margin: 10px;
+    text-align: justify;
+    font-weight: bolder;
+}
+.parA{
+    margin: 10px;
+    text-align: justify;
+    color: #ffffff;
+    font-weight: bolder;
+}
+.parkRow{
+    display: flex;
+    flex-direction: column;
+    
+}
+.searchHead{
+    color: #DD7F30;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
+.rowS{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 769px){
+    .inputS{
+        width: 60vw;
+    }
+
 }
