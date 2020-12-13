@@ -17,22 +17,10 @@ export default class SearchPg extends Component{
         
         return (
             <div className="onSearch" style={{ marginTop: "20px" }}>
-               {/* <Card>
-                <CardBody>
-                  <p className="">
-                    <img
-                      src={blankImg}
-                      className={"flag flag-" + code}
-                      alt={{park.properties.NAME}}
-                    />
-                  </p> 
-                  <CardTitle title={park.properties.NAME}>{park.properties.NAME}
-                  </CardTitle>
-                </CardBody>
-              </Card> */}
-              <p className="par">{park.properties.NAME}</p>
+              <Link to="/parkdetail"><p className="par">{park.properties.NAME}</p></Link>
               <hr/>
               <p className="parA">{park.properties.ADDRESS}</p>
+              
             </div>
           );
         };
