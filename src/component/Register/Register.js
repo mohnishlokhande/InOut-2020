@@ -17,7 +17,7 @@ export default class Register extends Component{
                 </div>
                 <br/>
                 <div className="regiBox">
-                    <Form>
+                    <Form action = "http://localhost:9001/auth/register" method="post">
                         <FormGroup className="col-md-12">
                             <Row>
                             <Label htmlFor ="name">Your Name</Label>
