@@ -7,6 +7,10 @@ const cors = require('cors');
 const shortid = require('shortid')
 const Razorpay = require('razorpay') //payment 
 
+app.use(express.json());
+app.use(bodyParser.urlencoded({
+	extended: true
+  }));
 app.use(express.urlencoded({ extended: true }));    //for accessing req.body.name
 app.set('view-engine', 'ejs')    //setting view engine to ejs
 app.use(cors());
@@ -19,6 +23,9 @@ app.listen(process.env.port || 9001);       //starting server
 
 //import routes from route/index.js
 app.use('/', routes);
+// app.post('/', (req, res) => {
+// 	console.log(req.body.name);
+// })
 
 //creating test api
 var testAPI = require('./routes/testAPI');

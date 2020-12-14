@@ -16,4 +16,5 @@ input attributes (input type="text" id="name" name="name" required)
 [single page vs multi page](https://www.youtube.com/watch?v=F_BYg2QGsC0)  
 [git set upstream](https://www.git-tower.com/learn/git/faq/set-upstream/)  
 [How to clone all remote branches in Git?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git)  
-[git fetch](https://www.javatpoint.com/git-fetch)
+[git fetch](https://www.javatpoint.com/git-fetch)  
+Database pool https://stackoverflow.com/questions/30545749/how-to-provide-a-mysql-database-connection-in-single-file-in-nodejs, Database wrapper
