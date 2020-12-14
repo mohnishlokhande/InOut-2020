@@ -21,8 +21,8 @@ function loadScript(src) {
 
 const __DEV__ = document.domain === 'localhost'
 
-function Parkdetail (){
-    const [name, setName] = useState('Mehul')
+function Parkdetail() {
+	const [name, setName] = useState('Mehul')
 
 	async function displayRazorpay() {
 		const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
@@ -39,12 +39,12 @@ function Parkdetail (){
 		console.log(data)
 
 		const options = {
-			key: __DEV__ ? 'rzp_test_obECvLmr55neCO' : 'NOT_AVIALLABLE',
+			key: __DEV__ ? 'rzp_test_obECvLmr55neCO' : 'NOT_AVILABLE',
 			currency: data.currency,
 			amount: data.amount.toString(),
 			order_id: data.id,
-			name: 'PARK BOOKING',
-			description: 'Thank you for using this app to book parking slot',
+			name: 'Car Parking',
+			description: 'Thank you for booking park slot',
 			image: 'http://localhost:9001/logo.svg',
 			handler: function (response) {
 				alert(response.razorpay_payment_id)
@@ -52,15 +52,14 @@ function Parkdetail (){
 				alert(response.razorpay_signature)
 			},
 			prefill: {
-				name :'mlkkteam',
-				email: 'mlkk106@gmail.com',
-				phone_number: '1234567890'
+				name,
+				email: 'sdfdsjfh2@ndsfdf.com',
+				phone_number: '9899999999'
 			}
 		}
 		const paymentObject = new window.Razorpay(options)
 		paymentObject.open()
 	}
-
         return(
             <>
             
@@ -76,9 +75,8 @@ function Parkdetail (){
                             <p>Parking Rate : 20-/hour</p>
                            </div><br />
 
-                           <button onClick={displayRazorpay}>
+                            <button onClick={displayRazorpay}>
                                Book Now
-                               
                             </button>
 							<br/>
 							<button >
