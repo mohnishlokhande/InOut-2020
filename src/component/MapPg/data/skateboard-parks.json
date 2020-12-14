@@ -62,7 +62,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.546518086577947, 45.467134581917357]
+        "coordinates": [77.895070, 29.866244]
       }
     },
     {
@@ -70,9 +70,9 @@
       "properties": {
         "PARK_ID": 1157,
         "FACILITYID": 28002,
-        "NAME": "Walter Baker Skateboard Park",
+        "NAME": "IIT Roorkee",
         "NAME_FR": "Planchodrome Walter-Baker",
-        "ADDRESS": "100 Charlie Rogers Place",
+        "ADDRESS": "Roorkee - Haridwar Highway, Roorkee, Uttarakhand 247667",
         "ADDRESS_FR": "100, place Charlie Rogers",
         "FACILITY_T": "bowl",
         "FACILITY_1": "bol",

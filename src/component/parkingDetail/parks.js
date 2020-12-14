@@ -1,11 +1,66 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Header from '../Header/Header'
 import './parks.css'
 import Parkpic from './car-parking.jpg'
 // import * as parkDate from "../MapPg/data/skateboard-parks.json";
 
-export default class Parkdetail extends Component{
-    render(){
+
+function loadScript(src) {
+	return new Promise((resolve) => {
+		const script = document.createElement('script')
+		script.src = src
+		script.onload = () => {
+			resolve(true)
+		}
+		script.onerror = () => {
+			resolve(false)
+		}
+		document.body.appendChild(script)
+	})
+}
+
+const __DEV__ = document.domain === 'localhost'
+
+function Parkdetail (){
+    const [name, setName] = useState('Mehul')
+
+	async function displayRazorpay() {
+		const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+
+		if (!res) {
+			alert('Razorpay SDK failed to load. Are you online?')
+			return
+		}
+
+		const data = await fetch('http://localhost:1337/razorpay', { method: 'POST' }).then((t) =>
+			t.json()
+		)
+
+		console.log(data)
+
+		const options = {
+			key: __DEV__ ? 'rzp_test_obECvLmr55neCO' : 'NOT_AVIALLABLE',
+			currency: data.currency,
+			amount: data.amount.toString(),
+			order_id: data.id,
+			name: 'PARK BOOKING',
+			description: 'Thank you for nothing. Please give us some money',
+			image: 'http://localhost:1337/logo.svg',
+			handler: function (response) {
+				alert(response.razorpay_payment_id)
+				alert(response.razorpay_order_id)
+				alert(response.razorpay_signature)
+			},
+			prefill: {
+				name,
+				email: 'sdfdsjfh2@ndsfdf.com',
+				phone_number: '9899999999'
+			}
+		}
+		const paymentObject = new window.Razorpay(options)
+		paymentObject.open()
+	}
+
         return(
             <>
             
@@ -20,7 +75,11 @@ export default class Parkdetail extends Component{
                             <p>contact numaber : 1234567890</p>
                             <p>Parking Rate : 20-/hour</p>
                            </div><br />
-                           <button>Book Now</button>
+
+                           <button onClick={displayRazorpay}>
+                               Book Now
+                               
+                            </button>
                         </div>
                     <div className="parkimg">
                             <img src={Parkpic} alt="ParkPic" />
@@ -29,5 +88,7 @@ export default class Parkdetail extends Component{
             </div>
             </>
         )
-    }
+ 
 }
+
+export default Parkdetail;

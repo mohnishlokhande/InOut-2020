@@ -37,7 +37,9 @@
   .navbar-dark {
     background-color: #302f2ff8;
   }
-  
+  .nav-link{
+    text-align: justify;
+  }
   .page-enter {
     opacity: 0.01;
     transform: translate(-100%);

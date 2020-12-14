@@ -9,6 +9,8 @@ import Gmap from './MapPg/MapPg';
 import SearchPg from './Search/Search';
 import Select from './Select/Select';
 import Parkdetail from './parkingDetail/parks';
+import Profile from './UserProfile/Profile';
+
 class Main extends Component {
     render(){
 
@@ -32,6 +34,7 @@ class Main extends Component {
                 <Route path="/search" component={SearchPg} />
                 <Route path="/select" component={Select} />
                 <Route path="/parkdetail" component={Parkdetail} />
+                <Route path="/userprofile" component={Profile} />
             </Switch>
         </BrowserRouter>
         );

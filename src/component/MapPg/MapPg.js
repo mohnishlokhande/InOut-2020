@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as parkDate from "./data/skateboard-parks.json";
@@ -7,6 +6,7 @@ import Geocoder from 'react-map-gl-geocoder';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import Demo from '../enablelocation';
+import { Link } from 'react-router-dom';
 import NavMap from "./Navbar";
 
 
@@ -111,9 +111,10 @@ export default function Gmap(props) {
             }}
           >
             <div>
-              <h2>{selectedPark.properties.NAME}</h2>
+              <Link to="/parkdetail"><h2>{selectedPark.properties.NAME}</h2></Link>
               <p>{selectedPark.properties.DESCRIPTIO}</p>
             </div>
+
           </Popup>
         ) : null}
 

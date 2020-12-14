@@ -26,28 +26,35 @@ class NavMap extends Component{
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto" href="/">
-                            <img src="/car-parking.jpg" height="30" width="41" alt="Perfect Parking  lot" />
+                            <img src="/car-parking.jpg" height="30" width="41" alt="Perfect Parking  lot" />&nbsp;&nbsp;
                         </NavbarBrand> 
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/select">
-                                        <span className="fa fa-home fa-lg"></span>Home
+                                        <span className="fa fa-home fa-lg"></span>&nbsp;Home
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/search">
-                                        <span className="fa fa-list fa-lg"></span>Parking list
+                                        <span className="fa fa-list fa-lg"></span>&nbsp;Parking list
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/map">
-                                        <span className="fa fa-map fa-lg"></span>Map
+                                        <span className="fa fa-map fa-lg"></span>&nbsp;Map
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/contactus">
-                                        <span className="fa fa-address-card fa-lg"></span>Contact Us
+                                        <span className="fa fa-address-card fa-lg"></span>&nbsp;Contact Us
+                                    </NavLink>
+                                </NavItem>
+                            </Nav>
+                            <Nav className="ml-auto" navbar>
+                                <NavItem>
+                                    <NavLink className="nav-link" to="/userprofile">
+                                        <span className="fa fa-user fa-lg"></span>&nbsp;Profile
                                     </NavLink>
                                 </NavItem>
                             </Nav>
