@@ -26,6 +26,9 @@
     justify-content: start;
     align-items: center;
     background-color: darkgrey;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 2px;
 }
 .inputS{
     width: 20vw;
@@ -62,5 +65,7 @@
     .inputS{
         width: 60vw;
     }
-
+    .onSearch{
+        width: 85vw;
+    }
 }

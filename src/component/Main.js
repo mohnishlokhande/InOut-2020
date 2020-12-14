@@ -8,7 +8,11 @@ import Demo from './enablelocation';
 import Gmap from './MapPg/MapPg';
 import SearchPg from './Search/Search';
 import Select from './Select/Select';
+<<<<<<< HEAD
 import SellerReg from './SellerReg/SellerReg';
+=======
+import Profile from './UserProfile/Profile';
+>>>>>>> 233afdbce226ad6cd8927d6af974db5c72ff6da4
 
 class Main extends Component {
     render(){
@@ -32,8 +36,12 @@ class Main extends Component {
                 <Route path="/mapOrig" component={Gmap} />
                 <Route path="/search" component={SearchPg} />
                 <Route path="/select" component={Select} />
+<<<<<<< HEAD
                 <Route path="/SellerReg" component={SellerReg} />
                
+=======
+                <Route path="/userprofile" component={Profile} />
+>>>>>>> 233afdbce226ad6cd8927d6af974db5c72ff6da4
             </Switch>
         </BrowserRouter>
         );

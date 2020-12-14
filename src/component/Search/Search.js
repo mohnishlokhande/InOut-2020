@@ -30,8 +30,7 @@ export default class SearchPg extends Component{
                   </CardTitle>
                 </CardBody>
               </Card> */}
-              <p className="par">{park.properties.NAME}</p>
-              <hr/>
+              <p className="par">{park.properties.NAME}</p> 
               <p className="parA">{park.properties.ADDRESS}</p>
             </div>
           );
