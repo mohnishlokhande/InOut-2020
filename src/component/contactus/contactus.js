@@ -1,14 +1,52 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Label, Input,Col, FormFeedback, Row } from 'reactstrap';
 import './contactus.css';
-
+import Teamcard from './teamcard';
+import Mohnish from '../Image/monu.jpg'
+import Kaushik from '../Image/karuna.png'
+import Profile from '../Image/profilepic.png'
+import NavMap from '../MapPg/Navbar';
 
 
 export default class Contactus extends Component{
 
 
     render(){
+        const team=[
+            {
+                id:0,
+                name:'Mohnish Lokhande',
+                email:'mlokhande@bt.iitr.ac.in',
+                image: Mohnish
+                
+            },
+            {
+                id:1,
+                name:'Akash Kumar',
+                email:'akumar@ch.iitr.ac.in',
+                image: Profile
+                
+            },
+            {
+                id:2,
+                name:'Karuna Kaushik',
+                email:'kkaushik@bt.iitr.ac.in',
+                image: Kaushik
+
+                
+            },
+            {
+                id:3,
+                name:'Amit Gohri',
+                email:'Agohri@ch.iitr.ac.in',
+                image: Profile
+
+                
+            }
+        ]
         return(
+            <>
+            <NavMap />
             <div class = "main ">
             <div class="about-section">
   <h1>About Us </h1>
@@ -18,64 +56,21 @@ export default class Contactus extends Component{
 </div>
 
 <h2 class = "ot" ><u>Our Team</u></h2>
-<div class="row">
-  <div class="column">
-    <div class="card">
-      {/* <img src="/w3images/team1.jpg" alt="Jane" style="width:100%"> */}
-      <div class = " pic1"> </div>
-      <div class="container">
-        <h2>Amitanshu Gohri</h2>
-        <p class="title">CEO & Founder</p>
-        
-        <p>amitansa@gmail.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
 
-  <div class="column">
-    <div class="card">
-      {/* <img src="/w3images/team2.jpg" alt="Mike" style="width:100%"> */}
-      <div class="container">
-        <h2>Karuna Kaushik</h2>
-        <p class="title">Art Director</p>
-        
-        <p>K_corona@gmail.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">
-      {/* <img src="/w3images/team2.jpg" alt="Mike" style="width:100%"> */}
-      <div class="container">
-        <h2>Akash Kumar</h2>
-        <p class="title">Art Director</p>
-        
-        <p>Akumar45@gmail.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      {/* <img src="/w3images/team3.jpg" alt="John" style="width:100%"> */}
-      <div class="container">
-        <h2>Mohnish lokhande</h2>
-        <p class="title">Designer</p>
-       
-        <p>mohnish1@gmail.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-
+<div className="teamcont">
+{team.map((member, index)=>{
+    return(
+    <div key= {index} className="innerteambox">
+        <Teamcard teamdetail={member} />
+        </div>
+    )
+})}
+  
 </div>
 
 <p> For any query email us at appujappu@gmail.com</p>
 </div>
-
+</>
 
 
 

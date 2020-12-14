@@ -74,12 +74,7 @@ function Parkdetail() {
                             <p>contact numaber : 1234567890</p>
                             <p>Parking Rate : 20-/hour</p>
                            </div><br />
-<<<<<<< HEAD
                            <button onClick={displayRazorpay}>
-=======
-
-                            <button onClick={displayRazorpay}>
->>>>>>> f6c94c1c916f4aa7765e7a0933918b6760b699b5
                                Book Now
                             </button>
                         </div>

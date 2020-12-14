@@ -38,7 +38,7 @@ class Main extends Component {
                 <Route path="/parkdetail" component={Parkdetail} />
                 <Route path="/SellerReg" component={SellerReg} />
                 <Route path="/userprofile" component={Profile} />
-                <Route path="/contactus" component={Contactus} />
+                <Route path="/team" component={Contactus} />
             </Switch>
         </BrowserRouter>
         );
