@@ -15,7 +15,7 @@ app.use(cors());
 app.listen(process.env.port || 9001);       //starting server   
 
 //mysql database
-var con = require("./mysql");
+// var con = require("./mysql");
 
 //import routes from route/index.js
 app.use('/', routes);
@@ -64,11 +64,11 @@ app.post('/verification', (req, res) => {
 
 app.post('/razorpay', async (req, res) => {
 	const payment_capture = 1
-	const amount = 499
+	const amount = 10
 	const currency = 'INR'
 
 	const options = {
-		amount: amount * 100,
+		amount: amount ,
 		currency,
 		receipt: shortid.generate(),
 		payment_capture

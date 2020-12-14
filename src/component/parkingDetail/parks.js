@@ -28,11 +28,11 @@ function Parkdetail (){
 		const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
 
 		if (!res) {
-			alert('Razorpay SDK failed to load. Are you online?')
+			alert('Razorpay SDK failed to load. Check your internet connection')
 			return
 		}
 
-		const data = await fetch('http://localhost:1337/razorpay', { method: 'POST' }).then((t) =>
+		const data = await fetch('http://localhost:9001/razorpay', { method: 'POST' }).then((t) =>
 			t.json()
 		)
 
@@ -44,17 +44,17 @@ function Parkdetail (){
 			amount: data.amount.toString(),
 			order_id: data.id,
 			name: 'PARK BOOKING',
-			description: 'Thank you for nothing. Please give us some money',
-			image: 'http://localhost:1337/logo.svg',
+			description: 'Thank you for using this app to book parking slot',
+			image: 'http://localhost:9001/logo.svg',
 			handler: function (response) {
 				alert(response.razorpay_payment_id)
 				alert(response.razorpay_order_id)
 				alert(response.razorpay_signature)
 			},
 			prefill: {
-				name,
-				email: 'sdfdsjfh2@ndsfdf.com',
-				phone_number: '9899999999'
+				name :'mlkkteam',
+				email: 'mlkk106@gmail.com',
+				phone_number: '1234567890'
 			}
 		}
 		const paymentObject = new window.Razorpay(options)
