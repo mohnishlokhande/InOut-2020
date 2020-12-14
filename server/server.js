@@ -64,11 +64,11 @@ app.post('/verification', (req, res) => {
 
 app.post('/razorpay', async (req, res) => {
 	const payment_capture = 1
-	const amount = 10
+	const amount = 499
 	const currency = 'INR'
 
 	const options = {
-		amount: amount ,
+		amount: amount * 100,
 		currency,
 		receipt: shortid.generate(),
 		payment_capture
@@ -86,5 +86,4 @@ app.post('/razorpay', async (req, res) => {
 		console.log(error)
 	}
 })
-
 console.log('Running at Port 9001');
