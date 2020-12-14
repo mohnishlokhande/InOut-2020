@@ -10,9 +10,9 @@
       "properties": {
         "PARK_ID": 960,
         "FACILITYID": 28014,
-        "NAME": "Acchi wali parking",
+        "NAME": "Lokhande Parking",
         "NAME_FR": "Planchodrome Bearbrook",
-        "ADDRESS": "Delhi",
+        "ADDRESS": "Near Subzi Mandi, Pratap Nagar, Delhi",
         "ADDRESS_FR": "8720, chemin Russell",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
@@ -40,7 +40,7 @@
       "properties": {
         "PARK_ID": 1219,
         "FACILITYID": 28001,
-        "NAME": "Acchi wali parkin",
+        "NAME": "Acchi wali parking",
         "NAME_FR": "Planchodrome Bob-MacQuarrie (Parc SK8 Extreme)",
         "ADDRESS": "1490 Youville Drive",
         "ADDRESS_FR": "1490, promenade Youville",
@@ -62,7 +62,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [77.895070, 29.866244]
+        "coordinates": [78.895070, 20.866244]
       }
     },
     {
@@ -92,7 +92,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.898610599532319, 45.295014379864874]
+        "coordinates": [77.895070, 29.866244]
       }
     },
     {

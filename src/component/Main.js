@@ -11,6 +11,7 @@ import Select from './Select/Select';
 import Parkdetail from './parkingDetail/parks';
 import SellerReg from './SellerReg/SellerReg';
 import Profile from './UserProfile/Profile';
+import Contactus from './contactus/contactus';
 
 class Main extends Component {
     render(){
@@ -37,6 +38,7 @@ class Main extends Component {
                 <Route path="/parkdetail" component={Parkdetail} />
                 <Route path="/SellerReg" component={SellerReg} />
                 <Route path="/userprofile" component={Profile} />
+                <Route path="/team" component={Contactus} />
             </Switch>
         </BrowserRouter>
         );

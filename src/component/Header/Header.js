@@ -26,7 +26,7 @@ class Header extends Component{
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />&nbsp;
                         <NavbarBrand className="mr-auto" href="/">
-                            <img src="/car-parking.jpg" height="30" width="41" alt="Perfect Parking  lot" />&nbsp;&nbsp;
+                            <img src="/car-parking.jpg" height="30" width="41" alt="Perfect Parking  Lot" />&nbsp;&nbsp;
                         </NavbarBrand> 
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
@@ -46,8 +46,8 @@ class Header extends Component{
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/contactus">
-                                        <span className="fa fa-address-card fa-lg"></span>&nbsp;Contact Us
+                                    <NavLink className="nav-link" to="/team">
+                                        <span className="fa fa-address-card fa-lg"></span>&nbsp;Team
                                     </NavLink>
                                 </NavItem> 
                             </Nav>
@@ -65,7 +65,7 @@ class Header extends Component{
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
-                                <h1 className="heading">Perfect Parking  lot</h1>
+                                <h1 className="heading">Perfect Parking  Lot</h1>
                                 <p className="heading">Rent your place for parking and make your city traffic free. Help people to find best parking slot and help to save time and to earn money too.</p>
                             </div>
                         </div>

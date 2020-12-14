@@ -3,21 +3,20 @@ const { useParams } = require('react-router-dom');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Amit@123",
+    password: "root",
     port: '3306',
-    database : 'inout7_parkingApp'
+    database : 'inout'
   });
 
+  con.connect((err) => {
+    if (err)  
+    {
+        console.log("connection failed !");
+        return 
+    }
+    return console.log("connected !");
+});
 module.exports = con;
-//   con.connect((err) => {
-//     if (err)  
-//     {
-//         console.log("connection failed !");
-//         return 
-//     }
-//     return console.log("connected !");
-// });
-
 // //// users table
 //   var sql = "CREATE TABLE users (email VARCHAR(255) PRIMARY KEY, name VARCHAR(255), password VARCHAR(255))";
 //   con.query(sql, function (err, result) {
