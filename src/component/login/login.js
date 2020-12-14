@@ -50,8 +50,8 @@ export default class Login extends Component{
                         <br/>
                         <FormGroup row>
                             <Col className="feedButton">
-                                <button type="button" className="btn btnlogin">
-                                    Login
+                                <button type="button" className="btn btnlogin" >
+                                    <Link to="/select" style={{color:"white"}}>Login</Link>
                                 </button>
                             </Col>
                         </FormGroup>

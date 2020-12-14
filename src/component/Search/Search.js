@@ -16,8 +16,8 @@ export default class SearchPg extends Component{
    //     var code = park.toLowerCase();
         
         return (
-            <div className="onSearch" style={{ marginTop: "20px" }}>
-              <Link to="/parkdetail"><p className="par">{park.properties.NAME}</p></Link>
+            <Link to="/parkdetail"><div className="onSearch" style={{ marginTop: "20px" }}>
+              <p className="par">{park.properties.NAME}</p>
               <hr/>
                {/* <Card>
                 <CardBody>
@@ -34,7 +34,7 @@ export default class SearchPg extends Component{
               </Card> */}
               <p className="parA">{park.properties.ADDRESS}</p>
               
-            </div>
+            </div></Link>
           );
         };
     onchange= e =>{

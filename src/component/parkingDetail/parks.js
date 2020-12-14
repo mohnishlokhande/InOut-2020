@@ -70,7 +70,7 @@ function Parkdetail (){
                     <div className="parkdetail">
                         <div className="parkA">
                            <div className="parkAinnerdiv">
-                           <p>Park Name : Achchiwali parking</p>
+                           <p>Park Name : Acchi wali parking</p>
                             <p>Address : 1490 Youville Drive</p>
                             <p>contact numaber : 1234567890</p>
                             <p>Parking Rate : 20-/hour</p>
@@ -78,6 +78,11 @@ function Parkdetail (){
 
                            <button onClick={displayRazorpay}>
                                Book Now
+                               
+                            </button>
+							<br/>
+							<button >
+                               View in MAP
                                
                             </button>
                         </div>
