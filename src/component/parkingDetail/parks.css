@@ -1,0 +1,54 @@
+.parkbox{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 20px;
+}
+
+.parkdetail{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+.parkA{
+    width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* display: flex; */
+      flex-direction: column;
+
+}
+.parkAinnerdiv{
+    text-align: justify;
+    padding: 15px;
+}
+.parkA button{
+    border: none;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none !important;
+
+}
+.parkimg{
+    /* width: 50%; */
+}
+/* .parkimg img{
+    width: 95%;
+} */
+@media only screen and (max-width: 800px){
+    .parkA, .parkimg{
+        width: auto;
+    }
+    .parkdetail{
+        flex-direction: column;
+    }
+    .parkimg img{
+        width: 80%;
+    }
+}

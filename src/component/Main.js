@@ -8,6 +8,8 @@ import Demo from './enablelocation';
 import Gmap from './MapPg/MapPg';
 import SearchPg from './Search/Search';
 import Select from './Select/Select';
+import Parkdetail from './parkingDetail/parks';
+import SellerReg from './SellerReg/SellerReg';
 import Profile from './UserProfile/Profile';
 
 class Main extends Component {
@@ -29,9 +31,11 @@ class Main extends Component {
                 <Route path="/register" component={Register} />
                 <Route path="/map" component={Demo} />  
                 <Route path="/login" component={Login} />
-                <Route path="/mapOrig" component={Gmap} />
+                {/* <Route path="/mapOrig" component={Gmap} /> */}
                 <Route path="/search" component={SearchPg} />
                 <Route path="/select" component={Select} />
+                <Route path="/parkdetail" component={Parkdetail} />
+                <Route path="/SellerReg" component={SellerReg} />
                 <Route path="/userprofile" component={Profile} />
             </Switch>
         </BrowserRouter>

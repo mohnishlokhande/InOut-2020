@@ -57,3 +57,23 @@
     outline: none !important;
     color:green;
 }
+
+@media only screen and (max-width: 700px){
+    .carpic{
+        display: none;
+    }
+    .cardho{
+        width: auto;
+    }
+    .logodiv{
+        height: 30%;
+        width: 80%;
+        padding: 30px 0px 0px 0px;
+       
+    }
+    .parkingdetails{
+        height: 50%;
+        width: 80%;
+    }
+
+}

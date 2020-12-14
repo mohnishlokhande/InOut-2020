@@ -17,6 +17,8 @@ export default class SearchPg extends Component{
         
         return (
             <div className="onSearch" style={{ marginTop: "20px" }}>
+              <Link to="/parkdetail"><p className="par">{park.properties.NAME}</p></Link>
+              <hr/>
                {/* <Card>
                 <CardBody>
                   <p className="">
@@ -30,8 +32,8 @@ export default class SearchPg extends Component{
                   </CardTitle>
                 </CardBody>
               </Card> */}
-              <p className="par">{park.properties.NAME}</p> 
               <p className="parA">{park.properties.ADDRESS}</p>
+              
             </div>
           );
         };

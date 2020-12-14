@@ -10,13 +10,19 @@
     min-height:400px;
   }
   
+  .navbar{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
   .footer{
     background-color: #D1C4E9;
     margin:0px auto;
     padding: 20px 0px 20px 0px;
   }
   .jumbotron {
-    padding:70px 30px 70px 30px;
+    padding: 122px 30px 70px 30px;
     margin:0px auto;
     background: #514666cb ;
     color:floralwhite;
@@ -57,4 +63,14 @@
   }
   .heading{
       text-align: justify;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .navbar {
+        position: relative;
+    }
+    .jumbotron{
+    padding:70px 30px 70px 30px;
+
+    }
   }
