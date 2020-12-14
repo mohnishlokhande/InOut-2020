@@ -1,21 +1,21 @@
-// var mysql = require('mysql');
-// const { useParams } = require('react-router-dom');
-// var con = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "root",
-//     port: '3306',
-//     // database : 'mydb'
-//   });
+var mysql = require('mysql');
+const { useParams } = require('react-router-dom');
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root",
+    port: '3306',
+    database : 'inout'
+  });
 
-//   con.connect((err) => {
-//     if (err)  
-//     {
-//         console.log("connection failed !");
-//         return 
-//     }
-//     return console.log("connected !");
-// });
+  con.connect((err) => {
+    if (err)  
+    {
+        console.log("connection failed !");
+        return 
+    }
+    return console.log("connected !");
+});
 
 // //// users table
 //   var sql = "CREATE TABLE users (email VARCHAR(255) PRIMARY KEY, name VARCHAR(255), password VARCHAR(255))";
