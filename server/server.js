@@ -6,20 +6,21 @@ var bodyParser = require('body-parser')// require to handle http post
 const cors = require('cors');
 const shortid = require('shortid')
 const Razorpay = require('razorpay') //payment 
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
-app.use(express.json());
-app.use(bodyParser.urlencoded({
-	extended: true
-  }));
+
 app.use(express.urlencoded({ extended: true }));    //for accessing req.body.name
 app.set('view-engine', 'ejs')    //setting view engine to ejs
 app.use(cors());
+app.use(bodyParser.json())
+app.use(express.json());
 
 // var users = []; //to mimic users in database
 app.listen(process.env.port || 9001);       //starting server   
 
 //mysql database
-var con = require("./mysql");
+var db = require("./mysql");
 
 //import routes from route/index.js
 app.use('/', routes);
@@ -32,6 +33,8 @@ var testAPI = require('./routes/testAPI');
 app.use('/testAPI', testAPI);
 
 app.use('/auth', require('./routes/auth'))
+
+
 
 
 

@@ -18,6 +18,10 @@ router.get('/login', (req, res) => {
     res.render('login.ejs');
 });
 
+//plotregister
 
+router.get('/parkreg',(req, res) => {
+    res.render('seller.ejs');
+})
 
 module.exports = router;

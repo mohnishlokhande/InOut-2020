@@ -8,7 +8,7 @@ module.exports.authenticate = function (req, res) {
   var password = req.body.password;
    
    
-  connection.query('SELECT * FROM user WHERE email = ?', [email], async function (error, results) {
+  connection.query('SELECT * FROM users WHERE email = ?', [email], async function (error, results) {
     if (error) {
       res.json({
         message: 'there are some error with query'

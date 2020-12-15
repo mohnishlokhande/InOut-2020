@@ -19,6 +19,12 @@ class Header extends Component{
         });
     }
 
+    // handleLogout = e => {
+    //     e.preventDefault();
+    //     this.props.setUser(null);
+    //     this.props.history.push("/login");
+    // }
+
     render(){
         return(
             <>
@@ -54,7 +60,8 @@ class Header extends Component{
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/userprofile">
-                                        <span className="fa fa-user fa-lg"></span>&nbsp;Profile
+                                        <span className="fa fa-user fa-lg"></span>&nbsp;Profile 
+                                         {/* <button onClick={this.handleLogout}>Logout</button> */}
                                     </NavLink>
                                 </NavItem>
                             </Nav>

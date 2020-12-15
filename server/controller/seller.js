@@ -3,19 +3,20 @@ var bodyParser = require('body-parser')
 var express=require("express");
 var connection = require('../mysql');
 
-module.exports.register = async (req,res) =>{
+module.exports.plotregister = async (req,res) =>{
     // var today = new Date();
     //var encryptedString = cryptr.encrypt(req.body.password);
   //console.log(req.body.name);
-    const hashedPass = await bcrypt.hash(req.body.password, 10) //async function returning hashed password to be stored in database
-    var user={
-        "username":req.body.name,
+    // const hashedPass = await bcrypt.hash(req.body.password, 10) //async function returning hashed password to be stored in database
+    var seller={
+        "sellername":req.body.name,
         "email":req.body.email,
-        "password":hashedPass,
+        "parkname" : req.body.parkname,
+        // "password":hashedPass,
         "contact" : req.body.contact
         
     }
-    connection.query('INSERT INTO users SET ?',user,  (error, results, fields) => {
+    connection.query('INSERT INTO sellers SET ?',seller,  (error, results, fields) => {
       if (error) {
         res.json({
             message:'there are some error with query'
@@ -23,7 +24,7 @@ module.exports.register = async (req,res) =>{
       }
       else{
           res.json({
-            message:'user registered sucessfully'
+            message:'Parking lot registered sucessfully'
           })
       }
     });
