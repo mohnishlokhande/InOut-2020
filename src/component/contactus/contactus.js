@@ -50,7 +50,7 @@ export default class Contactus extends Component{
             <div class = "main ">
                 <div class="about-section">
                     <h1>About Us </h1>
-                    <p> We the team from IITRoorkee coming forward for some positive cause. Dont forget <br/> to give your precious opinion.Every opinion will be highly appreciated. </p>    
+                    <p> We the team from IIT Roorkee coming forward for some positive cause. Don't forget <br/> to give your precious opinion. Every opinion will be highly appreciated. </p>    
                 </div>
 
                     <h2 class = "ot" ><u>Our Team</u></h2>
