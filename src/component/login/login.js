@@ -5,6 +5,38 @@ import {Form, FormGroup, Label, Input,Col, FormFeedback, Row } from 'reactstrap'
 
 
 export default class Login extends Component{
+    state={
+        username : '',
+        password : '',
+    }
+    handleChange = (e) =>
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+    
+    handleSubmit = e => {
+        e.preventDefault()
+        fetch('http://localhost:9001/login', {
+            method:'POST',
+            body: JSON.stringify(this.state),
+            headers:{
+                'content-type':'application/json',
+                'accept' : 'application/json'
+            }
+        })
+        .then(response => response.json())
+        // .then(data=>{
+        //     // localStorage.setItem('userId', data.username)
+        //     // this.props.setUser(data.username)
+        //     this.props.history.push('/select')
+        // })
+
+        this.setState({
+            username:'',
+            password:''
+        })
+    }
+    
 
 
     render(){
@@ -16,14 +48,14 @@ export default class Login extends Component{
                 </div>
                 <br/>
                 <div className="regidBox">
-                    <Form>
+                    <Form onSubmit={this.handleSubmit}> 
                         
                         <FormGroup className="col-md-12">
                             <Row>
-                            <Label htmlFor ="email">Your Email</Label>
+                            <Label htmlFor ="email">Username</Label>
                             
-                                <Input type="email" id="email" name="email"
-                                    placeholder="Your Email" />
+                                <Input type="text" id="username" name="username" value ={this.state.username} onChange = {this.handleChange}
+                                    placeholder="USERNAME" />
                             </Row>
                         </FormGroup>
             
@@ -34,24 +66,16 @@ export default class Login extends Component{
                             <Row>
                             <Label htmlFor ="password">Password</Label>
                             
-                                <Input type="password" id="password" name="password"
+                                <Input type="password" id="password" name="password" value ={this.state.password} onChange = {this.handleChange}
                                     placeholder="Enter Password"/>
 
                             </Row>
                         </FormGroup> 
-                        {/* <FormGroup>
-                            <Label htmlFor ="message" md={2}>Message</Label>
-                            <Col md={12}>
-                                <Input type="textarea" id="message" name="message"
-                                    rows="12" />
-
-                            </Col>
-                        </FormGroup> */}
                         <br/>
                         <FormGroup row>
                             <Col className="feedButton">
                                 <button type="button" className="btn btnlogin" >
-                                    <Link to="/select" style={{color:"white"}}>Login</Link>
+                                    Login
                                 </button>
                             </Col>
                         </FormGroup>
