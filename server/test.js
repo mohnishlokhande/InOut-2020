@@ -1,47 +1,23 @@
-var express = require("express");
-var Cryptr = require('cryptr');
-var mysql = require('mysql');
-const { useParams } = require('react-router-dom');
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "Amit@123",
-    port: '3306',
-    database : 'inout7_parkingApp'
-  });
-
-  con.connect((err) => {
-    if (err)  
-    {
-        console.log("connection failed !");
-        return 
-    }
-    return console.log("connected !");
-});
+const Cryptr = require('cryptr');
+const bcrypt = require('bcrypt'); 
+const { FullscreenControl } = require('react-map-gl');
+const cryptr = new Cryptr('myTotalySecretKey');
 
 
-module.exports.register = async (req, res) => {
-    // var today = new Date();
-    var encryptedString = cryptr.encrypt(req.body.password);
-    // const hashedPass = await bcrypt.hash(password, 8) //async function returning hashed password to be stored in database
-    var users = {
-        "name": req.body.name,
-        "email": req.body.email,
-        "password": encryptedString,
-        // "contact" : req.body.contact
-        
-    }
-    connection.query('INSERT INTO Registerdetails SET ?', users, (error, results, fields) => {
-        if (error) {
-            res.json({
-                message: 'there are some error with query'
-            })
-        } else {
-            res.json({
-                message: 'user registered sucessfully'
-            })
-        }
-    });
-}
+// const promise = new promise(function (resolve, reject) {
+//     setTimeout(()=>console.log('hello user'))
+// })
 
+ 
+const encryptedString = cryptr.encrypt('bacon');
+const decryptedString = cryptr.decrypt(encryptedString);
+setTimeout(function () {
+    console.log('kfhks');
+}, 1000)
 
+console.log( bcrypt.hash('amit', 10).then(() => {
+    console.log('sdfg');
+}));
+console.log(encryptedString); // e7b75a472b65bc4a42e7b3f78833a4d00040beba796062bf7c13d9533b149e5ec3784813dc20348fdf248d28a2982df85b83d1109623bce45f08238f6ea9bd9bb5f406427b2a40f969802635b8907a0a57944f2c12f334bd081d5143a357c173a611e1b64a
+console.log(decryptedString); // bacon
+console.log('hello');
