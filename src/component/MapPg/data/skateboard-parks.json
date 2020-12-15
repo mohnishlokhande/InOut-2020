@@ -10,7 +10,7 @@
       "properties": {
         "PARK_ID": 960,
         "FACILITYID": 28014,
-        "NAME": "Lokhande Parking",
+        "NAME": "Friends Parking",
         "NAME_FR": "Planchodrome Bearbrook",
         "ADDRESS": "Near Subzi Mandi, Pratap Nagar, Delhi",
         "ADDRESS_FR": "8720, chemin Russell",
@@ -130,7 +130,7 @@
       "properties": {
         "PARK_ID": 1160,
         "FACILITYID": 28007,
-        "NAME": "Roving Skateboard Park Location",
+        "NAME": "Queen Park Location",
         "NAME_FR": "Lieu de planchodrome itinérant",
         "ADDRESS": "10 Warner Colpitts Lane",
         "ADDRESS_FR": "10, ruelle Warner Colpitts",
@@ -152,7 +152,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-75.926651366520872, 45.260659774950561]
+        "coordinates": [84.377586, 24.754860]
       }
     },
     {
