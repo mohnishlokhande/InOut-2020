@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));    //for accessing req.body.nam
 app.set('view-engine', 'ejs')    //setting view engine to ejs
 app.use(cors());
 app.use(bodyParser.json())
-
+app.use(express.json());
 
 // var users = []; //to mimic users in database
 app.listen(process.env.port || 9001);       //starting server   

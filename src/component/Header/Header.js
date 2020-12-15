@@ -60,7 +60,7 @@ class Header extends Component{
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/userprofile">
-                                        <span className="fa fa-user fa-lg"></span>&nbsp;{this.props.user.username} 
+                                        <span className="fa fa-user fa-lg"></span>&nbsp;Profile 
                                          {/* <button onClick={this.handleLogout}>Logout</button> */}
                                     </NavLink>
                                 </NavItem>

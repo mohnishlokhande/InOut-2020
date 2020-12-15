@@ -19,7 +19,7 @@ export default class Register extends Component{
     
     handleSubmit = e => {
         e.preventDefault()
-        fetch('http://localhost:9001/register', {
+        fetch('http://localhost:9000/register', {
             method:'POST',
             body: JSON.stringify(this.state),
             headers:{
@@ -32,7 +32,7 @@ export default class Register extends Component{
             // localStorage.setItem('userId', data.username)
             // this.props.setUser(data.username)
             // this.props.history.push('/login')
-        // })
+        // })z
 
         this.setState({
             username:'',
