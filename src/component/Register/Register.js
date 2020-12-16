@@ -19,7 +19,7 @@ export default class Register extends Component{
     
     handleSubmit = e => {
         e.preventDefault()
-        fetch('http://localhost:9000/register', {
+        fetch('http://localhost:9001/auth/register', {
             method:'POST',
             body: JSON.stringify(this.state),
             headers:{
@@ -45,8 +45,8 @@ export default class Register extends Component{
 
         return(
             <div className="mainContainer">
-                <div className="logodiv"><img src={Logo} alt="logo" /></div>
                 <div className="backphoto">
+                <div className="logodiv"><img src={Logo} alt="logo" /></div>
                 <div>
                     <h2 className="headingReg">Easy Parking</h2>
                 </div>

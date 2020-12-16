@@ -1,6 +1,6 @@
 
 .main{
-    background-color: rgb(255, 255, 255);
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
     background-image: url(../Register/backPhoto.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% auto;
     height: 100%;
     width: 100vw;
     display: flex;
@@ -29,6 +29,9 @@
     justify-content: center;
     /* height: 90vh; */
     width: 50vw;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding-top: 19px;
     /* backdrop-filter: blur(4px); */
 }
 .headingReg{
@@ -37,16 +40,32 @@
     /* text-decoration-line: underline; */
     text-decoration: underline;
 }
-.btnApply{
+.btApply{
     margin-top: 3vh;
     color: aliceblue;
     font-weight: bold;
-    background-color: #DD7F30;
+    
 }
-
+.cont{
+    height: 100%;
+    width: 100vw;
+    background-color: #11C865;
+}
+.formCls{
+    width: 80%;
+}
+.imgUp{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 0;
+}
 @media only screen and (max-width: 769px){
-    .regiBox{
+    .regBox{
         width: 100vw;
     }
-
+    .formCls{
+        width: 90%;
+    }
 }
