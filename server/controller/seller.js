@@ -3,7 +3,7 @@ var bodyParser = require('body-parser')
 var express=require("express");
 var connection = require('../mysql');
 
-module.exports.plotregister = async (req,res) =>{
+module.exports.parkreg = async (req,res) =>{
     // var today = new Date();
     //var encryptedString = cryptr.encrypt(req.body.password);
   //console.log(req.body.name);

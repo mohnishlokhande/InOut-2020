@@ -14,26 +14,27 @@ export default class Login extends Component{
             [e.target.name] : e.target.value
         })
     
-    handleSubmit = e => {
-        e.preventDefault()
-        fetch('http://localhost:9001/login', {
-            method:'POST',
-            body: JSON.stringify(this.state),
-            headers:{
-                'content-type':'application/json',
-                'accept' : 'application/json'
-            }
-        })
-        .then(response => response.json())
-        // .then(data=>{
-        //     // localStorage.setItem('userId', data.username)
-        //     // this.props.setUser(data.username)
-        //     this.props.history.push('/select')
-        // })
+        handleSubmit=(e)=>{
 
-        this.setState({
+            // let {username,password}=this.state;
+            fetch('http://localhost:9001/auth/login', {
+                 method: 'POST',
+                 headers: {'Content-Type': 'application/json'},
+                 body: JSON.stringify(this.state)
+               }).then(response=>response.json())
+            .then(err => {
+                console.log(err);
+              })
+               .then(data=>{
+                    // window.alert(data)
+                this.props.history.push('/select')
+    
+                    //Do anything else like Toast etc.
+           })
+           this.setState({
             username:'',
-            password:''
+            password:'' ,
+          
         })
     }
     
@@ -48,11 +49,11 @@ export default class Login extends Component{
                 </div>
                 <br/>
                 <div className="regidBox">
-                    <Form onSubmit={this.handleSubmit}> 
+                    <form> 
                         
                         <FormGroup className="col-md-12">
                             <Row>
-                            <Label htmlFor ="email">Username</Label>
+                            <Label htmlFor ="username">Username</Label>
                             
                                 <Input type="text" id="username" name="username" value ={this.state.username} onChange = {this.handleChange}
                                     placeholder="USERNAME" />
@@ -74,12 +75,12 @@ export default class Login extends Component{
                         <br/>
                         <FormGroup row>
                             <Col className="feedButton">
-                                <button type="button" className="btn btnlogin" >
+                                <button type="button" className="btn btnlogin" onClick={this.handleSubmit}>
                                     Login
                                 </button>
                             </Col>
                         </FormGroup>
-                    </Form>
+                    </form>
                 </div>
                 </div>
                 <br/>

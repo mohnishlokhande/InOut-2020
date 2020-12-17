@@ -38,7 +38,9 @@ class Main extends Component {
                 <Route path="/parkdetail" component={Parkdetail} />
                 <Route path="/SellerReg" component={SellerReg} />
                 <Route path="/userprofile" component={Profile} />
+                {/* <Route path="/logintest" component = {Logintest} />  */}
                 <Route path="/team" component={Contactus} />
+                <Route path="*" component={() => "404 NOT FOUND"} />
             </Switch>
         </BrowserRouter>
         );

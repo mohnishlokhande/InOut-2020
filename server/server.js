@@ -2,20 +2,36 @@ const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt')    // for hashing passwords
 var routes = require('./routes/index'); //requre routes pbject
-var bodyParser = require('body-parser')// require to handle http post
 const cors = require('cors');
+
 const shortid = require('shortid')
 const Razorpay = require('razorpay') //payment 
+
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+var bodyParser = require('body-parser')// require to handle http post
 
-
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));    //for accessing req.body.name
 app.set('view-engine', 'ejs')    //setting view engine to ejs
-app.use(cors());
-app.use(bodyParser.json())
-app.use(express.json());
-
+app.use(cors({
+	origin:["http://localhost:3000"],
+	methods:["GET", "POST"],
+	credential: true,
+}));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(
+	session({
+	  key: "userId",
+	  secret: "subscribe",
+	  resave: false,
+	  saveUninitialized: false,
+	  cookie: {
+		expires: 60 * 60 * 24,
+	  },
+	})
+  );
 // var users = []; //to mimic users in database
 app.listen(process.env.port || 9001);       //starting server   
 
@@ -24,9 +40,6 @@ var db = require("./mysql");
 
 //import routes from route/index.js
 app.use('/', routes);
-// app.post('/', (req, res) => {
-// 	console.log(req.body.name);
-// })
 
 //creating test api
 var testAPI = require('./routes/testAPI');

@@ -58,6 +58,15 @@ class NavMap extends Component{
                                     </NavLink>
                                 </NavItem>
                             </Nav>
+
+                            <Nav className="logout" navbar>
+                                        <button type="button" className="btn btnlogout"  
+                                            // onClick={() => {
+                                            //     auth.logout(() => {this.props.history.push("/login");
+                                            //     });
+                                            // }}
+                                            > Logout</button> 
+                            </Nav>
                         </Collapse>
                     </div>
                 </Navbar>  
