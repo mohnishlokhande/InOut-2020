@@ -16,6 +16,26 @@ export default class Register extends Component{
         this.setState({
             [e.target.name] : e.target.value
         })
+<<<<<<< HEAD
+=======
+    
+    handleSubmit = e => {
+        e.preventDefault()
+        fetch('http://localhost:9001/auth/register', {
+            method:'POST',
+            body: JSON.stringify(this.state),
+            headers:{
+                'content-type':'application/json',
+                'accept' : 'application/json'
+            }
+        })
+        .then(response => response.json())
+        // .then(data=>{
+            // localStorage.setItem('userId', data.username)
+            // this.props.setUser(data.username)
+            // this.props.history.push('/login')
+        // })z
+>>>>>>> 5fee4beb2b5a6a3506978a7f2371590c38976f7b
 
     handleSubmit=(e)=>{
 
@@ -47,8 +67,8 @@ export default class Register extends Component{
 
         return(
             <div className="mainContainer">
-                <div className="logodiv"><img src={Logo} alt="logo" /></div>
                 <div className="backphoto">
+                <div className="logodiv"><img src={Logo} alt="logo" /></div>
                 <div>
                     <h2 className="headingReg">Easy Parking</h2>
                 </div>
