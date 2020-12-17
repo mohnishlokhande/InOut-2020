@@ -16,46 +16,48 @@ export default class Register extends Component{
         this.setState({
             [e.target.name] : e.target.value
         })
-    
-    handleSubmit = e => {
-        e.preventDefault()
-        fetch('http://localhost:9000/register', {
-            method:'POST',
-            body: JSON.stringify(this.state),
-            headers:{
-                'content-type':'application/json',
-                'accept' : 'application/json'
-            }
-        })
-        .then(response => response.json())
-        // .then(data=>{
-            // localStorage.setItem('userId', data.username)
-            // this.props.setUser(data.username)
-            // this.props.history.push('/login')
-        // })z
 
-        this.setState({
-            username:'',
-            password:'',
-            email :'',
-            contact :''
-        })
-    }
+    handleSubmit=(e)=>{
+
+        // let {username,password}=this.state;
+        fetch('http://localhost:9001/auth/register', {
+             method: 'POST',
+             headers: {'Content-Type': 'application/json'},
+             body: JSON.stringify(this.state)
+           }).then(response=>response.json())
+        //    .then(response => console.log(response))
+        .then(err => {
+            console.log(err);
+          })
+           .then(data=>{
+                window.alert("Registered Successfully")
+            this.props.history.push('/select')
+
+                //Do anything else like Toast etc.
+       })
+       this.setState({
+        username:'',
+        password:'' ,
+        email :'',
+        contact :''
+    })
+       
+       }
     render(){
 
         return(
             <div className="mainContainer">
-                <div className="logodiv"><img src={Logo} alt="logo" /></div>
                 <div className="backphoto">
+                <div className="logodiv"><img src={Logo} alt="logo" /></div>
                 <div>
                     <h2 className="headingReg">Easy Parking</h2>
                 </div>
                 <br/>
                 <div className="regiBox">
-                    <Form onSubmit={this.handleSubmit}>
+                    <form >
                         <FormGroup className="col-md-12">
                             <Row>
-                            <Label htmlFor ="name">Your Name</Label>
+                            <Label htmlFor ="username">UserName</Label>
                             
                                 <Input type="text" id="username" name="username" value ={this.state.username} onChange = {this.handleChange}
                                     placeholder="Your Name" />
@@ -76,7 +78,7 @@ export default class Register extends Component{
                             <Row>
                             <Label htmlFor ="mobileNo">Mobile No.</Label>
                             
-                                <Input type="tel" id="contact" name="contact" value ={this.state.contact} onChange = {this.handleChange}
+                                <Input type="contact" id="contact" name="contact" value ={this.state.contact} onChange = {this.handleChange}
                                     placeholder="Mobile No."/>
 
                             </Row>
@@ -94,12 +96,12 @@ export default class Register extends Component{
                         <br/>
                         <FormGroup row>
                             <Col className="feedButton">
-                                <button type="button" className="btn btnReg">
+                                <button type="button" className="btn btnReg" onClick={this.handleSubmit}>
                                     Register
                                 </button>
                             </Col>
                         </FormGroup>
-                    </Form>
+                    </form>
                 </div>
                 </div>
                 <br/>

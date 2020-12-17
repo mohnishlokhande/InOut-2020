@@ -4,11 +4,11 @@ const bcrypt = require('bcrypt')    // for hashing passwords
 
 var connection = require('../mysql');
 module.exports.authenticate = function (req, res) {
-  var email = req.body.email;
+  var username = req.body.username;
   var password = req.body.password;
    
    
-  connection.query('SELECT * FROM users WHERE email = ?', [email], async function (error, results) {
+  connection.query('SELECT * FROM users WHERE username = ?', [username], async function (error, results) {
     if (error) {
       res.json({
         message: 'there are some error with query'
@@ -26,14 +26,14 @@ module.exports.authenticate = function (req, res) {
           })
         } else {
           res.json({
-            message: "Email and password does not match"
+            message: "Username and password does not match"
           });
         }
           
       }
       else {
         res.json({
-          message: "Email does not exits"
+          message: "User does not exits"
         });
       }
     }

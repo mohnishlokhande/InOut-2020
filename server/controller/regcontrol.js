@@ -9,7 +9,7 @@ module.exports.register = async (req,res) =>{
   //console.log(req.body.name);
     const hashedPass = await bcrypt.hash(req.body.password, 10) //async function returning hashed password to be stored in database
     var user={
-        "username":req.body.name,
+        "username":req.body.username,
         "email":req.body.email,
         "password":hashedPass,
         "contact" : req.body.contact

@@ -64,7 +64,16 @@
   .heading{
       text-align: justify;
   }
-
+  .btnlogout{
+    background: none;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    /* text-align: ; */
+  }
+.logout{
+  outline: none !important;
+}
   @media only screen and (max-width: 600px) {
     .navbar {
         position: relative;

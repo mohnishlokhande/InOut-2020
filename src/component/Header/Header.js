@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Navbar, NavbarBrand,Nav,NavbarToggler,Collapse,NavItem, Jumbotron, Button, Modal, ModalBody,ModalHeader, Form, FormGroup, Input, Label } from 'reactstrap';
-import {NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import './Header.css';
 
 class Header extends Component{
@@ -19,11 +19,9 @@ class Header extends Component{
         });
     }
 
-    // handleLogout = e => {
-    //     e.preventDefault();
-    //     this.props.setUser(null);
-    //     this.props.history.push("/login");
-    // }
+    handleLogout = e => {
+        this.props.history.push("/login");
+    }
 
     render(){
         return(
@@ -60,10 +58,19 @@ class Header extends Component{
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/userprofile">
-                                        <span className="fa fa-user fa-lg"></span>&nbsp;Profile 
+                                        <span className="fa fa-user fa-lg"></span>&nbsp; Profile
                                          {/* <button onClick={this.handleLogout}>Logout</button> */}
                                     </NavLink>
                                 </NavItem>
+                            </Nav>
+                            <Nav className="logout" navbar>
+                                {/* <NavItem> */}
+                                    {/* <NavLink className="nav-link" > */}
+                                        <button type="button" className="btn btnlogout"  
+                                            onClick={this.handleLogout}
+                                            > Logout</button> 
+                                    {/* </NavLink> */}
+                                {/* </NavItem> */}
                             </Nav>
                         </Collapse>
                     </div>

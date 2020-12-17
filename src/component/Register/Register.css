@@ -28,6 +28,7 @@
     justify-content: center;
     height: 68vh; 
     width: 50vw;
+    border-radius: 15px;
     /* backdrop-filter: blur(4px); */
 }
 .headingReg{
@@ -40,6 +41,9 @@
     color: aliceblue;
     font-weight: bold;
     background-color: #DD7F30;
+}
+.logodiv{
+    height: 0;
 }
 
 @media only screen and (max-width: 769px){
