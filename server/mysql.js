@@ -3,9 +3,9 @@ const { useParams } = require('react-router-dom');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Amit@123",
+    password: "Amit@123",   
     port: '3306',
-    database: 'inout7_parkingApp'
+    database: 'inout7'
 });
 
 con.connect((err) => {
@@ -31,7 +31,7 @@ module.exports = con;
 
 
 //// sellers table
-// var sql = "CREATE TABLE sellers (email VARCHAR(255) PRIMARY KEY, name VARCHAR(255),search_name varchar(255), password VARCHAR(255))";
+// var sql = "CREATE TABLE sellers (email VARCHAR(255) PRIMARY KEY, name VARCHAR(255), password VARCHAR(255))";
 // con.query(sql, function (err, result) {
 //     if (err) throw err;
 //     console.log(" sellers Table created");
