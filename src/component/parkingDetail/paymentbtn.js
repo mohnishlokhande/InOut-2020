@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-import Header from '../Header/Header'
 import './parks.css'
-import Parkpic from './car-parking.jpg'
-// import CheckAvailability from '../checkavailability'
-// import * as parkDate from "../MapPg/data/skateboard-parks.json";
 
 
 function loadScript(src) {
@@ -22,7 +18,7 @@ function loadScript(src) {
 
 const __DEV__ = document.domain === 'localhost'
 
-function Parkdetail() {
+function Paymentbtn() {
 	const [name, setName] = useState('Mehul')
 	const [showResults, setShowResults] = useState(false)
 	const handleseatavail = () => setShowResults(true)
@@ -64,39 +60,16 @@ function Parkdetail() {
 	}
         return(
             <>
-            
-            <Header />
-            <div className="parkbox"> 
-                <h1>Parking Name</h1>
-                    <div className="parkdetail">
-                        <div className="parkA">
-                           <div className="parkAinnerdiv">
-                           <p>Park Name : Acchi wali parking</p>
-                            <p>Address : 1490 Youville Drive</p>
-                            <p>contact numaber : 1234567890</p>
-                            <p>Parking Rate : 20-/hour</p>
-                           </div><br />
-                            <div className="btns">
-							
-							{/* &nbsp;  &nbsp; */}
-							<button >
-                               View in MAP
-                               
-                            </button>  
-							</div><br/>
-							<button type="button" className="checkAvailbtn" onClick={handleseatavail} >
-							CheckAvailability 
+            <div className="btns" >
+            <button onClick={displayRazorpay}>
+                               Book Now
                             </button>
-							
-                        </div>
-                    <div className="parkimg">
-                            <img src={Parkpic} alt="ParkPic" />
-                    </div>
-                </div>
             </div>
+            
+           
             </>
         )
  
 }
 
-export default Parkdetail;
+export default Paymentbtn;

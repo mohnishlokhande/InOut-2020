@@ -48,7 +48,7 @@ export default class Register extends Component{
         return(
             <div className="mainContainer">
                 <div className="backphoto">
-                <div className="logodiv"><img src={Logo} alt="logo" /></div>
+                {/* <div className="logodivreg"><img src={Logo} alt="logo" /></div> */}
                 <div>
                     <h2 className="headingReg">Easy Parking</h2>
                 </div>
