@@ -26,7 +26,7 @@ class NavMap extends Component{
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto" href="/">
-                            <img src="/car-parking.jpg" height="30" width="41" alt="Perfect Parking  lot" />&nbsp;&nbsp;
+                            <img src="/car-parking.jpg" height="30" width="41" alt="Perfect Parking  lot" />&nbsp;&nbsp; 
                         </NavbarBrand> 
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>

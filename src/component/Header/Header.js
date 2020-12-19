@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Navbar, NavbarBrand,Nav,NavbarToggler,Collapse,NavItem, Jumbotron, Button, Modal, ModalBody,ModalHeader, Form, FormGroup, Input, Label } from 'reactstrap';
 import {NavLink} from 'react-router-dom';
 import './Header.css';
+import DropD from './Dropdown';
 
 class Header extends Component{
 
@@ -66,9 +67,10 @@ class Header extends Component{
                             <Nav className="logout" navbar>
                                 {/* <NavItem> */}
                                     {/* <NavLink className="nav-link" > */}
-                                        <button type="button" className="btn btnlogout"  
+                                   {/* / <DropD/> */}
+                                    <button type="button" className="btn btnlogout"  
                                             onClick={this.handleLogout}
-                                            > Logout</button> 
+                                            ><span className="fa fa-sign-out aa fa-lg"/> Logout</button> 
                                     {/* </NavLink> */}
                                 {/* </NavItem> */}
                             </Nav>

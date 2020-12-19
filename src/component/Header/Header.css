@@ -30,7 +30,7 @@
   
   address{
     font-size:80%;
-    margin:0px;
+    margin:0px; 
     color:#0f0f0f;
   }
   
@@ -67,13 +67,17 @@
   .btnlogout{
     background: none;
     color: white;
-    font-weight: 900;
+    font-weight: 50;
     cursor: pointer;
     /* text-align: ; */
   }
 .logout{
   outline: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
   @media only screen and (max-width: 600px) {
     .navbar {
         position: relative;
