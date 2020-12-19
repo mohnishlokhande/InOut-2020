@@ -46,7 +46,7 @@ constructor() {
   
   render() {
     return (
-        <>
+        <div className="bookdiv">  
         <Header />
       <div>
         <h1>Slot Booking Here </h1>
@@ -57,7 +57,9 @@ constructor() {
           onClickData = { this.onClickData.bind(this) }
           />
       </div>
-      </>
+        <Paymentbtn />
+
+      </div>
     )
   }
 }
@@ -81,7 +83,6 @@ class DrawGrid extends React.Component {
         <AvailableList available = { this.props.available } />
         <Bookedlot reserved = { this.props.reserved } />
         <br />
-        <Paymentbtn />
 
        </div>
     )
