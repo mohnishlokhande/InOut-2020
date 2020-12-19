@@ -29,11 +29,71 @@ router.post('/', (req, res) => {
     con.query(sql1, function (err, results) {
         if (err) {
             console.log('here1');
-            con.query(sql2, function (err, result) {
+            con.query(sql2, function (err, result2) {
                 if (err) {
                     console.log(err);
                 } else {
-                    var sql5 = "insert into " + table_name + "()"
+                    var no_of_parking;
+                    var capacity;
+                    var sql6 = "select park_id from parking_area"
+                    con.query(sql6, function (err, result6) {
+                        if (err) {
+                            console.log('here54   ');
+                            console.log(err);
+                        }
+                        else {
+                            no_of_parking = result6.length;
+
+                            var parkName;
+                            var sql7 = "select park_name from parking_area";
+                            con.query(sql7, function (err, result_parkname) {
+                                if (err) {
+                                    console.log('kfask');
+                                } else {
+                                    parkName = result_parkname;
+                                    var sql8 = "select capacity from parking_area";
+                                    con.query(sql8, function (err, result8) {
+                                        if (err) {
+                                            console.log('err');
+                                        }
+                                        else {
+                                            var count = 0;
+                                            result8.map((aray) => {
+                                                capacity[count] = aray[0].toString();
+
+                                            });
+                                            //convert capacity array to string
+                                            for (let index = 1; index <= no_of_parking; index++) {
+                                                let id = index.toString();
+
+                                                var sql9 = "insert into " + table_name + " (park_id, park_name, zero_one,one_two,two_three, three_four,four_five,five_six,six_seven, seven_eight,eight_nine,nine_ten,ten_eleven,eleven_twelve,twleve_thirteen, thirteen_fourteen,fourteen_fifteen,fifteen_sixteen, sixteen_seventeen,seventeen_eighteen,eighteen_nineteen,nineteen_twenty,twenty_twentyone,twentyone_twentytwo,twentytwo_twentythree,twentythree_zero) values (" id + ", " + parkName[index - 1][0] + "," + capacity[index - 1] + ","capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + "," + capacity[index - 1] + ")";
+                                                con.query(sql9, function (err, result) {
+                                                    if (err) {
+                                                        console.log(err);
+                                                    }
+                                                    else {
+                                                        res.json({
+                                                            "result": "table initialised successfully"
+
+                                                        })
+                                                    }
+                                                })
+
+                                            }
+                                        }
+                                    })
+                                }
+                            })
+
+
+
+
+
+                        }
+
+
+                    })
+
 
 
 
@@ -43,7 +103,7 @@ router.post('/', (req, res) => {
                 }
 
             })
-            //initialise the table with full capacity
+
         } else {
             //console.log('here2');
             //console.log(err);
@@ -54,17 +114,17 @@ router.post('/', (req, res) => {
                     console.log(err);
                 } else {
                     var from_time = req.body.from_time;
-                    
+
                     res.json({
                         "zero_one": res[0].zero_one,
                         "one_two": res[0].one_two,
-                        "three_four":res[0].three_four,
-                        "five_six":res[0].five_six,
-                        "seven_eight":res[0].seven_eight,
-                        "eight_nine":res[0].eight_nine,
-                        "nine_ten":res[0].nine_ten,
-                        "ten_eleven":res[0].ten_eleven,
-                        "eleven_twelve":res[0].eleven_twelve,
+                        "three_four": res[0].three_four,
+                        "five_six": res[0].five_six,
+                        "seven_eight": res[0].seven_eight,
+                        "eight_nine": res[0].eight_nine,
+                        "nine_ten": res[0].nine_ten,
+                        "ten_eleven": res[0].ten_eleven,
+                        "eleven_twelve": res[0].eleven_twelve,
                         "twleve_thirteen  thirteen_fourteen fourteen_fifteen fifteen_sixteen INT, sixteen_seventeen INT,seventeen_eighteen INT,eighteen_nineteen INT,nineteen_twenty INT,twenty_twentyone INT,twentyone_twentytwo INT,twentytwo_twentythree INT,twentythree_zero INT,"
                     })
 
