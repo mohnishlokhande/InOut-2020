@@ -23,9 +23,9 @@ router.get('/login', (req, res) => {
 router.get('/parkreg',(req, res) => {
     res.render('seller.ejs');
 })
-router.get('/logout',(req, res) => {
-    req.session.destroy();
-    res.redirect('/login');
-})
+router.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  });
 
 module.exports = router;
