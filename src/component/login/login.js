@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import {Form, FormGroup, Label, Input,Col, FormFeedback, Row } from 'reactstrap';
- import './login.css';
+import './login.css';
 
 
 export default class Login extends Component{

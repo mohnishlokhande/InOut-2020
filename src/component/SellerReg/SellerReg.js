@@ -36,7 +36,7 @@ export default class SellerReg extends Component{
     
     handleSubmit = e => {
         e.preventDefault()
-        fetch('http://localhost:9001/auth/register', {
+        fetch('http://localhost:9001/auth/parkreg', {
             method:'POST',
             body: JSON.stringify(this.state),
             headers:{

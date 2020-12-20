@@ -12,6 +12,9 @@ import Parkdetail from './parkingDetail/parks';
 import SellerReg from './SellerReg/SellerReg';
 import Profile from './UserProfile/Profile';
 import Contactus from './contactus/contactus';
+// import AllBookings from './parkingDetail/booking';
+// import CheckAvailability from './checkavailability';
+import BookNow from './parkingDetail/booking';
 
 class Main extends Component {
     render(){
@@ -40,6 +43,7 @@ class Main extends Component {
                 <Route path="/userprofile" component={Profile} />
                 {/* <Route path="/logintest" component = {Logintest} />  */}
                 <Route path="/team" component={Contactus} />
+                <Route path="/booking" component={BookNow} />
                 <Route path="*" component={() => "404 NOT FOUND"} />
             </Switch>
         </BrowserRouter>
