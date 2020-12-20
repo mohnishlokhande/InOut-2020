@@ -9,7 +9,7 @@ class Select extends Component{
 
     render(){
         return( 
-            <div className="cont">
+            <div className="contin">
                 <Header/>
             <div className="outerdivSel">
                 <div className="smap">

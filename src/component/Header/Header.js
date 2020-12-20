@@ -20,8 +20,14 @@ class Header extends Component{
         });
     }
 
-    handleLogout = e => {
-        this.props.history.push("/login");
+    // handleLogout = e => {
+    //     this.props.history.push("/login");
+    // }
+    handleLogout(){
+        this.setState({
+            loggedInStatus: "NOT_LOGGED_IN",
+            user:{}
+        })
     }
 
     render(){

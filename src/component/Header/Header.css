@@ -66,18 +66,25 @@
   }
   .btnlogout{
     background: none;
-    color: white;
+    color: rgba(255,255,255,.5);
     font-weight: 50;
     cursor: pointer;
+    
     /* text-align: ; */
+  }
+  .btnlogout:hover{
+    color: rgba(255,255,255,.75);
   }
 .logout{
   outline: none !important;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 }
-
+.aa{
+  color: rgba(255,255,255,.5);
+}
   @media only screen and (max-width: 600px) {
     .navbar {
         position: relative;
