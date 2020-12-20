@@ -5,17 +5,26 @@ import './login.css';
 
 
 export default class Login extends Component{
-    state={
-        username : '',
-        password : '',
+
+    constructor(props){
+        super(props);
+        let loggedIN= false
+        this.state={
+            email : '',
+            password : '',
+            loggedIN
+        };
+        this.handleChange= this.handleChange.bind(this);
+        this.handleSubmit= this.handleSubmit.bind(this);
     }
+
     handleChange = (e) =>
         this.setState({
             [e.target.name] : e.target.value
         })
     
         handleSubmit=(e)=>{
-
+            e.preventDefault();
             // let {username,password}=this.state;
             fetch('http://localhost:9001/auth/login', {
                  method: 'POST',
@@ -26,13 +35,13 @@ export default class Login extends Component{
                 console.log(err);
               })
                .then(data=>{
-                    // window.alert(data)
+                    window.alert(this.state.email)
                 this.props.history.push('/select')
     
                     //Do anything else like Toast etc.
            })
            this.setState({
-            username:'',
+            email:'',
             password:'' 
         })
     }
@@ -48,14 +57,16 @@ export default class Login extends Component{
                 </div>
                 <br/>
                 <div className="regidBox">
-                    <form> 
+                    <form onSubmit={this.handleSubmit}> 
                         
                         <FormGroup className="col-md-12">
                             <Row>
-                            <Label htmlFor ="username">Username</Label>
+                            <Label htmlFor ="email">Email</Label> 
                             
-                                <Input type="text" id="username" name="username" value ={this.state.username} onChange = {this.handleChange}
-                                    placeholder="USERNAME" />
+                                <Input type="text" id="email" name="email" 
+                                    value ={this.state.email} 
+                                    onChange = {this.handleChange}
+                                    placeholder="Email" />
                             </Row>
                         </FormGroup>
             
@@ -74,9 +85,9 @@ export default class Login extends Component{
                         <br/>
                         <FormGroup row>
                             <Col className="feedButton">
-                                <button type="button" className="btn btnlogin" onClick={this.handleSubmit}>
-                                    Login
-                                </button>
+                                <input type="submit" className="btn btnlogin" value="Login">
+                                   
+                                </input>
                             </Col>
                         </FormGroup>
                     </form>

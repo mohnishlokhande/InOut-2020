@@ -4,11 +4,11 @@ const bcrypt = require('bcrypt')    // for hashing passwords
 
 var connection = require('../mysql');
 module.exports.authenticate = function (req, res) {
-  var username = req.body.username;
+  var email = req.body.email;
   var password = req.body.password;
    
    
-  connection.query('SELECT * FROM users WHERE username = ?', [username], async function (error, results) {
+  connection.query('SELECT * FROM users WHERE email = ?', [email], async function (error, results) {
     if (error) {
       res.json({
         message: 'there are some error with query'
