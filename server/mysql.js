@@ -171,15 +171,15 @@ module.exports = con;
 //         console.log("name changed");
 //     }
 // });
-var sql = "ALTER table sellers ADD COLUMN (image blob) ";
-con.query(sql,function(err,result){
-    if(err){
-        throw err;
-    }
-    else{
-        console.log("image column added");
-    }
-});
+// var sql = "ALTER table sellers ADD COLUMN (image blob) ";
+// con.query(sql,function(err,result){
+//     if(err){
+//         throw err;
+//     }
+//     else{
+//         console.log("image column added");
+//     }
+// });
 // con.query("ALTER table users RENAME COLUMN name TO username" ,function(err,result){
 //     if(err){
 //         throw err;
@@ -194,7 +194,7 @@ con.query(sql,function(err,result){
 //         throw err;
 //     }
 //     else{
-//         console.log("image column added");
+//         console.log(" contact column added");
 //     }
 // });
 // con.query("show tables", function (err, res) {
