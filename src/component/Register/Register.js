@@ -36,12 +36,12 @@ export default class Register extends Component{
             console.log(err);
           })
           
-        //    .then(data=>{
-        //         window.alert("Registered Successfully")
-        //     this.props.history.push('/select')
+           .then(data=>{
+                window.alert("Registered Successfully")
+            // this.props.history.push('/select')
 
-                //Do anything else like Toast etc.
-    //    })
+                // Do anything else like Toast etc.
+       })
 
        this.setState({
         username:'',
@@ -62,7 +62,7 @@ export default class Register extends Component{
                 </div>
                 <br/>
                 <div className="regiBox">
-                    <form >
+                    <form  onSubmit={this.handleSubmit}>
                         <FormGroup className="col-md-12">
                             <Row>
                             <Label htmlFor ="username">UserName</Label>
@@ -104,9 +104,9 @@ export default class Register extends Component{
                         <br/>
                         <FormGroup row>
                             <Col className="feedButton">
-                                <button type="button" className="btn btnReg" onClick={this.handleSubmit}>
-                                    Register
-                                </button>
+                                <input type="submit" value="Register" className="btn btnReg" >
+                                    
+                                </input>
                             </Col>
                         </FormGroup>
                     </form>
