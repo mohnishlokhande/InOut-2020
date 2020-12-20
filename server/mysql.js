@@ -3,9 +3,9 @@ const { useParams } = require('react-router-dom');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Amit@123",   
+    password: "MSDhoni@0707",   
     port: '3306',
-    database: 'inout7'
+    database: 'mydb'
 });
 
 con.connect((err) => {
@@ -153,7 +153,51 @@ module.exports = con;
 //     if (err) throw err;
 //     console.log("users table created");
 // });
+// var sql = "ALTER table sellers add column (park_name varchar(255),mobileNo varchar(12), address varchar(255), num INT, rate INT, moreinfo varchar(500))";
+// con.query(sql,function(err,result){
+//     if(err){
+//         throw err;
+//     }
+//     else{
+//         console.log("new column added");
+//     }
+// });
 
+// con.query("ALTER table sellers RENAME COLUMN name TO sellername" ,function(err,result){
+//     if(err){
+//         throw err;
+//     }
+//     else{
+//         console.log("name changed");
+//     }
+// });
+var sql = "ALTER table sellers ADD COLUMN (image blob) ";
+con.query(sql,function(err,result){
+    if(err){
+        throw err;
+    }
+    else{
+        console.log("image column added");
+    }
+});
+// con.query("ALTER table users RENAME COLUMN name TO username" ,function(err,result){
+//     if(err){
+//         throw err;
+//     }
+//     else{
+//         console.log("name changed");
+//     }
+// });
+// var sql = "ALTER table users ADD COLUMN contact varchar(12) ";
+// con.query(sql,function(err,result){
+//     if(err){
+//         throw err;
+//     }
+//     else{
+//         console.log("image column added");
+//     }
+// });
 // con.query("show tables", function (err, res) {
 //     console.log(res);
 // });
+

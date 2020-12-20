@@ -28,6 +28,7 @@
     "express-session": "^1.17.1",
     "mysql": "^2.18.1",
     "razorpay": "^2.0.6",
+    "react-router-dom": "^5.2.0",
     "shortid": "^2.2.16"
   },
   "devDependencies": {

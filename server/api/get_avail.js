@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
                         "nine_ten":res[0].nine_ten,
                         "ten_eleven":res[0].ten_eleven,
                         "eleven_twelve":res[0].eleven_twelve,
-                        "twleve_thirteen  thirteen_fourteen fourteen_fifteen fifteen_sixteen INT, sixteen_seventeen INT,seventeen_eighteen INT,eighteen_nineteen INT,nineteen_twenty INT,twenty_twentyone INT,twentyone_twentytwo INT,twentytwo_twentythree INT,twentythree_zero INT,"
+                        // "twleve_thirteen" : thirteen_fourteen_fourteen_fifteen fifteen_sixteen INT, sixteen_seventeen INT,seventeen_eighteen INT,eighteen_nineteen INT,nineteen_twenty INT,twenty_twentyone INT,twentyone_twentytwo INT,twentytwo_twentythree INT,twentythree_zero INT,"
                     })
 
                 }
