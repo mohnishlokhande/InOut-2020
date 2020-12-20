@@ -29,6 +29,17 @@ constructor() {
       seatReserved: []
     }
   }
+
+  componentDidMount(){
+    fetch('http://localhost:9001/api/booking_req', {
+             method: 'POST',
+           }).then(response=>response.json())
+        //    .then(response => console.log(response))
+        .then(err => {
+            console.log(err);
+          })
+         
+  }
   
   onClickData(seat) {
     if(this.state.seatReserved.indexOf(seat) > -1 ) {

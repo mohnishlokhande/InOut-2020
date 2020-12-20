@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Navbar, NavbarBrand,Nav,NavbarToggler,Collapse,NavItem, Jumbotron, Button, Modal, ModalBody,ModalHeader, Form, FormGroup, Input, Label } from 'reactstrap';
 import {NavLink} from 'react-router-dom';
 import './Header.css';
+import auth from '../protection/auth';
 
 class Header extends Component{
 
@@ -19,8 +20,11 @@ class Header extends Component{
         });
     }
 
-    handleLogout = e => {
-        this.props.history.push("/login");
+    handleLogout = () => {
+        // auth.logout(() =>{
+            // removeUserSession();
+            this.props.history.push("/login");
+        // })
     }
 
     render(){

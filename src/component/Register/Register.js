@@ -59,7 +59,7 @@ export default class Register extends Component{
                             <Row>
                             <Label htmlFor ="username">UserName</Label>
                             
-                                <Input type="text" id="username" name="username" value ={this.state.username} onChange = {this.handleChange}
+                                <Input type="text" id="username" required name="username" value ={this.state.username} onChange = {this.handleChange}
                                     placeholder="Your Name" />
                                     
                             </Row>

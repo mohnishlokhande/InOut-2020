@@ -1,6 +1,6 @@
 const express = require('express');
 var router = express.Router();
-
+// var session =require('express-session')
 //define routes here
 
 //home
@@ -22,6 +22,10 @@ router.get('/login', (req, res) => {
 
 router.get('/parkreg',(req, res) => {
     res.render('seller.ejs');
+})
+router.get('/logout',(req, res) => {
+    req.session.destroy();
+    res.redirect('/login');
 })
 
 module.exports = router;
