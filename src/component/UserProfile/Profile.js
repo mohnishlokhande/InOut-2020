@@ -10,7 +10,7 @@ export default class Profile extends Component{
     render(){
         return(
             <>
-                <div className="cont">
+                <div className="contselect">
                     <Header/>
                     <div className="outerdivSel">
                         <h3>My name is Mr.X</h3>

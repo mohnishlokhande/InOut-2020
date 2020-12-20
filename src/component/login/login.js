@@ -25,9 +25,10 @@ export default class Login extends Component{
             .then(err => {
                 console.log(err);
               })
-               .then(data=>{
+               .then(res=>{
                     // window.alert(data)
-                this.props.history.push('/select')
+                    // localStorage.setItem('token',res.token)
+                // this.props.history.push('/select')
     
                     //Do anything else like Toast etc.
            })

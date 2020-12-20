@@ -19,8 +19,6 @@ module.exports = con;
 
 
 
-
-
 // //// users table
 //   var sql = "CREATE TABLE users (email VARCHAR(255) PRIMARY KEY, name VARCHAR(255), password VARCHAR(255))";
 //   con.query(sql, function (err, result) {

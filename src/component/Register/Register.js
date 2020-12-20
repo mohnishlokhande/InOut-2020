@@ -5,36 +5,44 @@ import Logo from '../Image/logo.png'
 import { Link } from 'react-router-dom';
 
 export default class Register extends Component{
-    
-    state={
-        username : '',
-        password : '',
-        email :'',
-        contact :''
-    }
+    constructor(props){
+        super(props)
+        let loggedIn =false
+        this.state={
+            username : '',
+            password : '',
+            email :'',
+            contact :''
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+
     handleChange = (e) =>
         this.setState({
             [e.target.name] : e.target.value
         })
 
     handleSubmit=(e)=>{
-
+          e.preventDefault();
         // let {username,password}=this.state;
         fetch('http://localhost:9001/auth/register', {
              method: 'POST',
              headers: {'Content-Type': 'application/json'},
              body: JSON.stringify(this.state)
            }).then(response=>response.json())
-        //    .then(response => console.log(response))
+           .then(response => console.log(response))
         .then(err => {
             console.log(err);
           })
-           .then(data=>{
-                window.alert("Registered Successfully")
-            this.props.history.push('/select')
+          
+        //    .then(data=>{
+        //         window.alert("Registered Successfully")
+        //     this.props.history.push('/select')
 
                 //Do anything else like Toast etc.
-       })
+    //    })
+
        this.setState({
         username:'',
         password:'' ,
@@ -48,7 +56,7 @@ export default class Register extends Component{
         return(
             <div className="mainContainer">
                 <div className="backphoto">
-                <div className="logodiv"><img src={Logo} alt="logo" /></div>
+                {/* <div className="logodivreg"><img src={Logo} alt="logo" /></div> */}
                 <div>
                     <h2 className="headingReg">Easy Parking</h2>
                 </div>
