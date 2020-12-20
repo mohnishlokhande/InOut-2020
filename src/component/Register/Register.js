@@ -39,7 +39,6 @@ export default class Register extends Component{
            .then(data=>{
                 window.alert("Registered Successfully")
             // this.props.history.push('/select')
-
                 // Do anything else like Toast etc.
        })
 
