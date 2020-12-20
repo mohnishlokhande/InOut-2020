@@ -15,15 +15,18 @@ module.exports.register = async (req,res) =>{
         "contact" : req.body.contact
         
     }
-    connection.query('INSERT INTO users SET ?',user,  (error, results, fields) => {
+    connection.query('INSERT INTO user SET ?',user,  (error, results, fields) => {
       if (error) {
         res.json({
             message:'there are some error with query'
         }) 
       }
       else{
-          res.json({
-            message:'user registered sucessfully'
+        res.json({
+          "username": req.body.username,
+          "email": req.body.email,
+          "contact": req.body.contact,
+          message:'user registered sucessfully'
           })
       }
     });

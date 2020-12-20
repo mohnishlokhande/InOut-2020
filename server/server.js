@@ -47,6 +47,9 @@ app.use('/testAPI', testAPI);
 
 app.use('/auth', require('./routes/auth'))
 
+var ap = require('./api/routes')
+app.use('/api', ap)
+
 
 
 
