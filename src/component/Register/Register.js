@@ -6,15 +6,16 @@ import { Link, Redirect } from 'react-router-dom';
 
 export default class Register extends Component{
     
+
     constructor(props){
         super(props);
-        let loggedIN= false
+        let loggedIn =false;
         this.state={
             username : '',
             password : '',
             email :'',
             contact :'',
-            loggedIN
+            loggedIn
         };
         this.handleChange= this.handleChange.bind(this);
         this.handleSubmit= this.handleSubmit.bind(this);
@@ -38,16 +39,17 @@ export default class Register extends Component{
              headers: {'Content-Type': 'application/json'},
              body: JSON.stringify(this.state)
            }).then(response=>response.json())
-        //    .then(response => console.log(response))
+           .then(response => console.log(response))
         .then(err => {
             console.log(err);
           })
+          
            .then(data=>{
                 window.alert("Registered Successfully")
             this.setState({
                 loggedIN:true
             })
-            //this.props.history.push('/select')
+            this.props.history.push('/select')
 
                 //Do anything else like Toast etc.
        })
@@ -60,9 +62,9 @@ export default class Register extends Component{
        
        }
     render(){
-        if(this.state.loggedIN){
-            return (<Redirect to="/select"/>);
-        }
+        // if(this.state.loggedIN){
+        //     return (<Redirect to="/select"/>);
+        // }
         return(
             <div className="mainContainer">
                 <div className="backphoto">
@@ -75,7 +77,7 @@ export default class Register extends Component{
                     <form  onSubmit={this.handleSubmit}>
                         <FormGroup className="col-md-12">
                             <Row>
-                            <Label htmlFor ="username">UserName</Label>
+                            <Label htmlFor ="username">Name</Label>
                             
                                 <Input type="text" id="username" name="username" value ={this.state.username} onChange = {this.handleChange}
                                     placeholder="Your Name" required/>

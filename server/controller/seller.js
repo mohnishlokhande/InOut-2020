@@ -9,7 +9,7 @@ module.exports.parkreg = async (req,res) =>{
   //console.log(req.body.name);
     // const hashedPass = await bcrypt.hash(req.body.password, 10) //async function returning hashed password to be stored in database
     var seller={
-        "sellername":req.body.name,
+        "sellername":req.body.sellername,
         "park_name":req.body.park_name,
         "mobileNo" : req.body.mobileNo,
         // "password":hashedPass,
@@ -22,6 +22,8 @@ module.exports.parkreg = async (req,res) =>{
     }
     connection.query('INSERT INTO sellers SET ?',seller,  (error, results, fields) => {
       if (error) {
+        console.log(error);
+
         res.json({
             message:'there are some error with query'
         }) 

@@ -37,6 +37,10 @@ export default class Login extends Component{
                .then(data=>{
                     window.alert(this.state.email)
                 this.props.history.push('/select')
+               //.then(res=>{
+                    // window.alert(data)
+                    // localStorage.setItem('token',res.token)
+                // this.props.history.push('/select')
     
                     //Do anything else like Toast etc.
            })
@@ -66,7 +70,7 @@ export default class Login extends Component{
                                 <Input type="text" id="email" name="email" 
                                     value ={this.state.email} 
                                     onChange = {this.handleChange}
-                                    placeholder="Email" />
+                                    placeholder="Email" required />
                             </Row>
                         </FormGroup>
             
@@ -78,7 +82,7 @@ export default class Login extends Component{
                             <Label htmlFor ="password">Password</Label>
                             
                                 <Input type="password" id="password" name="password" value ={this.state.password} onChange = {this.handleChange}
-                                    placeholder="Enter Password"/>
+                                    placeholder="Enter Password" required/>
 
                             </Row>
                         </FormGroup> 

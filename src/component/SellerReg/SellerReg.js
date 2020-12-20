@@ -6,29 +6,23 @@ import './SellerReg.css';
 
 
 export default class SellerReg extends Component{
-    // fileSelectedHandler = event =>{
-    //    this.setState({
-    //        selectedFile: event.target.files[0]
-    //    })
-    //   }
+    // constructor(props){
+    //     super(props)
+        // this.
+        state={
+            sellername : '',
+            park_name : '',
+            mobileNo :'',
+            address :'',
+            num:'',
+            rate:'',
+            moreinfo:'',
+            image:''
+        }
+        // console.log(this.state)
+    // }
 
-    //  state = {
-    //      selectedFile: null
-    //  } 
-    // //  fileUploadHandler = () =>{
-    // //      axios.post('')
-    // //  }
-
-    state={
-        sellername : '',
-        park_name : '',
-        mobileNo :'',
-        address :'',
-        num:'',
-        rate:'',
-        moreinfo:'',
-        image:''
-    }
+     
     handleChange = (e) =>
         this.setState({
             [e.target.name] : e.target.value
@@ -45,6 +39,9 @@ export default class SellerReg extends Component{
             }
         })
         .then(response => response.json())
+        .then(data => {
+            window.alert("Parking lot registered successfully", this.state)
+        })
 
         this.setState({
             sellername:'',
@@ -74,36 +71,36 @@ export default class SellerReg extends Component{
                     <br/>
 
                     <div className="regBox">
-                        <Form className="formCls">
+                        <form className="formCls" onSubmit={this.handleSubmit} >
 
                             <FormGroup className="col-md-12">
                                 <Row>
                                 <Label htmlFor ="sellername">Your full name</Label>
                         
-                                    <Input type="text" id="sellername" name="sellername"
-                                        placeholder="Enter your full name" />        
+                                    <Input type="text" id="sellername" name="sellername" value={this.state.sellername} onChange={this.handleChange}
+                                        required placeholder="Enter your full name" />        
                                 </Row>
                             </FormGroup>
                             <FormGroup className="col-md-12">
                                 <Row>
                                 <Label htmlFor ="park_name">Park name</Label>
                         
-                                    <Input type="text" id="park name" name="park_name"
-                                        placeholder="Park name" />        
+                                    <Input type="text" id="park name" name="park_name" value={this.state.park_name} onChange={this.handleChange}
+                                        required placeholder="Park name" />        
                                 </Row>
                             </FormGroup>
                             <FormGroup className="col-md-12">
                                 <Row>
                                 <Label htmlFor ="mobileNo">Mobile No.</Label>       
-                                    <Input type="text" id="mobileNo" name="mobileNo"
-                                        placeholder="Mobile No."/>
+                                    <Input type="text" id="mobileNo" name="mobileNo" value={this.state.mobileNo} onChange={this.handleChange}
+                                        required placeholder="Mobile No."/>
                                 </Row>
                             </FormGroup>
                             <FormGroup className="col-md-12">
                                 <Row>
                                 <Label htmlFor ="address">Park address</Label>
-                                    <Input type="text" id="address" name="address"
-                                        placeholder="Park address..." />
+                                    <Input type="text" id="address" name="address" value={this.state.address} onChange={this.handleChange}
+                                        required placeholder="Park address..." />
                                 </Row>
                             </FormGroup>
                             
@@ -111,14 +108,14 @@ export default class SellerReg extends Component{
                             <FormGroup className="col-md-5">
                                 <Row>
                                 <Label hymlFor="num">No. of parking slots</Label>
-                                <Input type="number" name="num" id="num" placeholder="00" />
+                                <Input type="number" required name="num" id="num" placeholder="00" value={this.state.num} onChange={this.handleChange} />
                                 </Row>
                             </FormGroup>
                             <FormGroup className="col-md-5">
                                 <Row>
                                 <Label htmlFor ="rate">Rate/hour</Label>
                                 
-                                    <Input type="number" id="rate" name="rate"
+                                    <Input type="number" id="rate" name="rate" required value={this.state.rate} onChange={this.handleChange}
                                         placeholder="Expected rate/hour in INR" />
                                 </Row>
                             </FormGroup>
@@ -127,14 +124,14 @@ export default class SellerReg extends Component{
                                 <Label htmlFor ="moreinfo">Tell more about yourself: </Label>
                                 <Row>
                                 <br/>
-                                <textarea model=".message" id ="moreinfo" rows="10" className="col-md-12" style={{borderRadius:"5px"}}  
+                                <textarea model=".message" id ="moreinfo" rows="10" className="col-md-12" style={{borderRadius:"5px"}}  value={this.state.moreinfo} onChange={this.handleChange}
                                     name ="moreinfo" placeholder="Write in less than 150 words"/>    
                                 </Row>
                             </FormGroup>
                             <FormGroup className="col-md-12">
                                 <Label for="image" sm={2} className="imgUp">Images</Label>
                                 <Col sm={12}>
-                                <Input type="file" name="image" id="image"/>
+                                <Input type="file" name="image" id="image" value={this.state.image} onChange={this.handleChange}/>
                                 <FormText color="white" style={{textAlign:"justify"}}>
                                     Upload some photos of the parking area.
                                 </FormText>
@@ -149,12 +146,12 @@ export default class SellerReg extends Component{
                             </FormGroup>
                             <FormGroup row>
                                 <Col className="feedButton">
-                                    <button type="button" className="btn btn-primary btApply">
-                                        Apply
-                                    </button>
+                                    <input type="submit" value="Apply" className="btn btn-primary btApply">
+                                        {/* Apply */}
+                                    </input>
                                 </Col>
                             </FormGroup> 
-                        </Form>
+                        </form>
                     </div>
 
                     {/* <div className ="App">

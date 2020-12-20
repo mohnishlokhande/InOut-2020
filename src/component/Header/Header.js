@@ -3,6 +3,7 @@ import { Navbar, NavbarBrand,Nav,NavbarToggler,Collapse,NavItem, Jumbotron, Butt
 import {NavLink} from 'react-router-dom';
 import './Header.css';
 import DropD from './Dropdown';
+import auth from '../protection/auth';
 
 class Header extends Component{
 
@@ -23,11 +24,16 @@ class Header extends Component{
     // handleLogout = e => {
     //     this.props.history.push("/login");
     // }
-    handleLogout(){
-        this.setState({
-            loggedInStatus: "NOT_LOGGED_IN",
-            user:{}
-        })
+    // handleLogout(){
+    //     this.setState({
+    //         loggedInStatus: "NOT_LOGGED_IN",
+    //         user:{}
+    //     })
+    handleLogout = () => {
+        // auth.logout(() =>{
+            // removeUserSession();
+            this.props.history.push("/login");
+        // })
     }
 
     render(){
