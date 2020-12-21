@@ -17,18 +17,22 @@ export default class SearchPgtest extends Component{
                 search: ""
         };
 
+    }
+
+    componentDidMount(){
         fetch('http://localhost:9001/parkselection') 
             .then(response =>{
-                response.json();
+                return response.json();
             })
-            .then((data) => console.log('This is your data', data))
-            .then(data => this.setState({ posts: data }));
-           // .then(posts => {
-            //    this.setState({posts})
-          //  })
-           // .then( (err) => {
-            //    console.log(err);
-            //})
+            // .then((findresponse) =>{
+            //     console.log('This is your data', findresponse)
+            // })
+            .then(data => this.setState({ posts: data }))
+           .then(posts => {this.setState({posts})
+           })
+           .then( (err) => {
+               console.log(err);
+            })
     }
     renderPark = park => {
         const { search } = this.state;
@@ -48,6 +52,8 @@ export default class SearchPgtest extends Component{
     render(){
         const { posts } = this.state;
         const { search } = this.state;
+        console.log(posts)
+
         const filteredPark = posts.filter(park => {
           return park.park_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
         });

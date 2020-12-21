@@ -23,6 +23,7 @@ export default class SearchPg extends Component{
             })
             .then(posts => {
                 this.setState({posts})
+                // console.log(posts);
             })
             .then( (err) => {
                 console.log(err);
