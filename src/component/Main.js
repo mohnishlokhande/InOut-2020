@@ -38,7 +38,7 @@ class Main extends Component {
                 <Route path="/login" component={Login} />
                 {/* <Route path="/mapOrig" component={Gmap} /> */}
                 <Route path="/search" component={SearchPg} />
-                <Route path="/searchtest" component={SearchPgtest} />
+                <Route path="/searchname" component={SearchPgtest} />
                 <Route path="/select" component={Select} />
                 <Route path="/parkdetail" component={Parkdetail} />
                 <Route path="/SellerReg" component={SellerReg} />

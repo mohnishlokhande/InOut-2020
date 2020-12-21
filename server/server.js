@@ -96,7 +96,7 @@ app.post('/verification', (req, res) => {
 
 app.post('/razorpay', async (req, res) => {
 	const payment_capture = 1
-	const amount = 499
+	const amount = 200
 	const currency = 'INR'
 
 	const options = {

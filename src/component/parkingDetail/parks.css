@@ -37,6 +37,9 @@
 }
 .btns button{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border: none;
     background-color: blue;
     color: white;
@@ -70,11 +73,11 @@
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
-} */
+} 
 .parkimg{
-    /* width: 50%; */
+     width: 50%; 
 }
-/* .parkimg img{
+ .parkimg img{
     width: 95%;
 } */
 @media only screen and (max-width: 800px){

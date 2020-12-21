@@ -112,7 +112,7 @@ export default function Gmap(props) {
           >
             <div>
               <Link to="/parkdetail"><h2>{selectedPark.properties.NAME}</h2></Link>
-              <p>{selectedPark.properties.DESCRIPTIO}</p>
+              <p>{selectedPark.properties.ADDRESS}</p>
             </div>
 
           </Popup>

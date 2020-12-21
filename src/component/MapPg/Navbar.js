@@ -36,7 +36,7 @@ class NavMap extends Component{
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/search">
+                                    <NavLink className="nav-link" to="/searchname">
                                         <span className="fa fa-list fa-lg"></span>&nbsp;Parking list
                                     </NavLink>
                                 </NavItem>
