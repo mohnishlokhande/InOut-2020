@@ -37,13 +37,13 @@ create table users(
 
 create table sellers(
 	park_id int not null auto_increment,
-    seller_name VARCHAR(300),
+    sellername VARCHAR(300),
     park_name varchar(256) not null,
-    contact int,
-    park_add varchar(256),
-    capacity int,
-    price float,
-    description varchar(512),
+    mobileNo int,
+    address varchar(256),
+    num int,
+    rate float,
+    moreinfo varchar(512),
     primary key (park_id)
     #foreign key(seller_name) references user(username)
 );
