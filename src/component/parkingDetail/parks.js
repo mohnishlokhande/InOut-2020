@@ -49,11 +49,12 @@ function Parkdetail() {
                                     Book Here
                                 </button>
                             </Link>
-							<hr/>
+							{/* <hr /> */}
+                            &nbsp;&nbsp;
 							<button >
                                View in MAP  
                             </button>  
-							<hr/>
+							&nbsp; &nbsp;
 							<button type="button" className="checkAvailbtn" onClick={handleseatavail} >
 							CheckAvailability 
                             </button>
