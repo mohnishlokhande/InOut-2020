@@ -3,6 +3,9 @@
 
 ## Project - Car parking slot Finding App
 
+## project-description
+As the life of people is becoming fast we want to save every possible bit of time. In busy cities like Delhi, Bombay,Chennai it becomes  tough to find where to park the vehicle. This platform is not only making the life of people easy by easily providing the nearby parking area but also providing the parking area holder a way of earning money.User can see the nearby parking area from map and can also search in searchbox for booking. Seller will have to provide details for their parking area to earn money and we wil  verify their detail and then will be registered as a seller. Here anyone can book a parking slot at their convenience by both prepaid and postpaid payment charge. we have to register on this platform for booking parking areas and owner of the park  will have to register as a seller.
+
 ## Project setup
 ```
 npm install
