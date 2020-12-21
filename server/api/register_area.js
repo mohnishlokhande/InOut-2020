@@ -30,3 +30,5 @@ router.post('/register_seller', (req, res) => {
         }
     })
 })
+
+module.exports = router;
