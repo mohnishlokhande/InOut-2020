@@ -46,7 +46,11 @@
     outline: none !important;
 }
 
-
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* .checkAvailbtn{
     background-color: #eee;
   color: #444;

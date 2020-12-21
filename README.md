@@ -26,17 +26,18 @@ var con = mysql.createConnection({
 });
 ```
 ```
-create table user(
+create table users(
 	user_id int not null auto_increment,
     username varchar(256),
     email varchar(256),
+    contact varchar(12),
     password varchar(256),
     primary key	(user_id)
 );
 
-create table parking_area(
+create table sellers(
 	park_id int not null auto_increment,
-    seller_name int,
+    seller_name VARCHAR(300),
     park_name varchar(256) not null,
     contact int,
     park_add varchar(256),
