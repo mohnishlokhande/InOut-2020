@@ -24,14 +24,8 @@ export default class SearchPgtest extends Component{
             .then(response =>{
                 return response.json();
             })
-            // .then((findresponse) =>{
-            //     console.log('This is your data', findresponse)
-            // })
-            .then(data => this.setState({ posts: data }))
-           .then(posts => {this.setState({posts})
-           })
-           .then( (err) => {
-               console.log(err);
+           .then(posts => {this.setState({posts})})
+           .then( (err) => { console.log(err);
             })
     }
     renderPark = park => {
@@ -75,23 +69,8 @@ export default class SearchPgtest extends Component{
                         })   
                     }
                 </div>
-                {/* <div className="smap">
-                    <button class="btn btn-info">
-                        <Link to="/map" className="btnMap" >View in MAP </Link>                    
-                    </button>    
-                </div> */}
             </div>
-{/* 
-                <ul>
-                {this.state.posts.map( post => 
-                   (
-                    <p>
-                    {post.park_name}
-                    {post.rate}
-                 </p>
-                   )
-                    )}
-                </ul> */}
+
                  
             </div>
         );
