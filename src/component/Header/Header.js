@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Navbar, NavbarBrand,Nav,NavbarToggler,Collapse,NavItem, Jumbotron, Button, Modal, ModalBody,ModalHeader, Form, FormGroup, Input, Label } from 'reactstrap';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Redirect} from 'react-router-dom';
 import './Header.css';
 import DropD from './Dropdown';
 import auth from '../protection/auth';
@@ -8,11 +8,14 @@ import auth from '../protection/auth';
 class Header extends Component{
 
     constructor(props){
+        let loggedIn =true;
         super(props);
         this.state = {
             isNavOpen: false,
+            loggedIn
         };
         this.toggleNav = this.toggleNav.bind(this);                      //we have to bind with the constructor
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     toggleNav(){
@@ -32,11 +35,17 @@ class Header extends Component{
     handleLogout = () => {
         // auth.logout(() =>{
             // removeUserSession();
-            this.props.history.push("/login");
+            this.setState({
+                loggedIn:false
+            })
+           // this.props.history.push("/login");
         // })
     }
 
     render(){
+        if(this.state.loggedIN ==false){
+            return (<Redirect to="/"/>);
+        }
         return(
             <>
                 <Navbar dark expand="md">
@@ -77,14 +86,13 @@ class Header extends Component{
                                 </NavItem>
                             </Nav>
                             <Nav className="logout" navbar>
-                                {/* <NavItem> */}
-                                    {/* <NavLink className="nav-link" > */}
+                                
                                    {/* / <DropD/> */}
+                                <NavLink className="nav-link" to="/">
                                     <button type="button" className="btn btnlogout"  
                                             onClick={this.handleLogout}
                                             ><span className="fa fa-sign-out aa fa-lg"/> Logout</button> 
-                                    {/* </NavLink> */}
-                                {/* </NavItem> */}
+                                </NavLink>
                             </Nav>
                         </Collapse>
                     </div>

@@ -28,4 +28,10 @@ router.get("/logout", (req, res) => {
     res.redirect("/");
   });
 
+// router.get('/parkselection', (request, result)=>{
+// 	db.query("SELECT * FROM sellers", function(err, results, fields){
+// 		if(err) throw err;
+// 	   result.send(results);
+//    })
+// })
 module.exports = router;

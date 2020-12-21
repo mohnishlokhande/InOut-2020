@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './Search.css';
-import { Link } from 'react-router-dom';
-import {Input, Card, CardBody, CardTitle} from 'reactstrap';
-import * as parkDate from "../MapPg/data/skateboard-parks.json";
+ import { Link } from 'react-router-dom';
+ import {Input, Card, CardBody, CardTitle} from 'reactstrap';
+// import * as parkDate from "../MapPg/data/skateboard-parks.json";
 import Header from '../Header/Header';
 
-export default class SearchPg extends Component{
+export default class SearchPgtest extends Component{
 
     // state={
     // }
@@ -17,43 +17,30 @@ export default class SearchPg extends Component{
                 search: ""
         };
 
-        fetch('http://localhost:9001/parkselection/')
+    }
+
+    componentDidMount(){
+        fetch('http://localhost:9001/parkselection') 
             .then(response =>{
-                response.json();
+                return response.json();
             })
-            .then(posts => {
-                this.setState({posts})
-                // console.log(posts);
+            // .then((findresponse) =>{
+            //     console.log('This is your data', findresponse)
+            // })
+            .then(data => this.setState({ posts: data }))
+           .then(posts => {this.setState({posts})
+           })
+           .then( (err) => {
+               console.log(err);
             })
-            .then( (err) => {
-                console.log(err);
-            })
-        }
-
-
+    }
     renderPark = park => {
         const { search } = this.state;
-   //     var code = park.toLowerCase();
-        
         return (
             <Link to="/parkdetail"><div className="onSearch" style={{ marginTop: "20px" }}>
-              <p className="par">{park.properties.NAME}</p>
-              {/* <p className="par">{park.properties.NAME}</p> */}
+              <p className="par">{park.park_name}</p>
               <hr/>
-               {/* <Card>
-                <CardBody>
-                  <p className="">
-                    <img
-                      src={blankImg}
-                      className={"flag flag-" + code}
-                      alt={{park.properties.NAME}}
-                    />
-                  </p> 
-                  <CardTitle title={park.properties.NAME}>{park.properties.NAME}
-                  </CardTitle>
-                </CardBody>
-              </Card> */}
-              <p className="parA">{park.properties.ADDRESS}</p>
+              <p className="parA">{park.address}</p>
               
             </div></Link>
           );
@@ -63,11 +50,14 @@ export default class SearchPg extends Component{
     };
 
     render(){
-
+        const { posts } = this.state;
         const { search } = this.state;
-        const filteredPark = parkDate.features.filter(park => {
-          return park.properties.NAME.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+        console.log(posts)
+
+        const filteredPark = posts.filter(park => {
+          return park.park_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
         });
+
         return(
             <div className="co">
                 <Header/>
@@ -91,7 +81,20 @@ export default class SearchPg extends Component{
                     </button>    
                 </div> */}
             </div>
+{/* 
+                <ul>
+                {this.state.posts.map( post => 
+                   (
+                    <p>
+                    {post.park_name}
+                    {post.rate}
+                 </p>
+                   )
+                    )}
+                </ul> */}
+                 
             </div>
         );
     }
+    
 }

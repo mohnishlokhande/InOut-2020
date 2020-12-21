@@ -23,28 +23,28 @@ export default class Login extends Component{
             [e.target.name] : e.target.value
         })
     
-        handleSubmit=(e)=>{
-            e.preventDefault();
-            // let {username,password}=this.state;
-            fetch('http://localhost:9001/auth/login', {
-                 method: 'POST',
-                 headers: {'Content-Type': 'application/json'},
-                 body: JSON.stringify(this.state)
-               }).then(response=>response.json())
-            .then(err => {
-                console.log(err);
-              })
-               .then(data=>{
-                    window.alert(this.state.email)
-                this.props.history.push('/select')
-               //.then(res=>{
-                    // window.alert(data)
-                    // localStorage.setItem('token',res.token)
-                // this.props.history.push('/select')
-    
-                    //Do anything else like Toast etc.
-           })
-           this.setState({
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        // let {username,password}=this.state;
+        fetch('http://localhost:9001/auth/login', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(this.state)
+            }).then(response=>response.json())
+        .then(err => {
+            console.log(err);
+            })
+            .then(data=>{
+                window.alert(this.state.email)
+            this.props.history.push('/select')
+            //.then(res=>{
+                // window.alert(data)
+                // localStorage.setItem('token',res.token)
+            // this.props.history.push('/select')
+
+                //Do anything else like Toast etc.
+        })
+        this.setState({
             email:'',
             password:'' 
         })

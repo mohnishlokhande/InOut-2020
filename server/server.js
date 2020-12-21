@@ -47,9 +47,15 @@ app.use('/testAPI', testAPI);
 
 app.use('/auth', require('./routes/auth'))
 
-var ap = require('./api/routes')
+var ap = require('./api/routes');
 app.use('/api', ap)
 
+app.get('/parkselection', (request, result)=>{
+	db.query("SELECT * FROM sellers", function(err, results, fields){
+		if(err) throw err;
+	   result.send(results);
+   })
+})
 
 
 

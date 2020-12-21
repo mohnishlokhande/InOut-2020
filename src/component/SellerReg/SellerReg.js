@@ -140,7 +140,7 @@ export default class SellerReg extends Component{
                             <hr/>
                             <FormGroup check>
                                 <Label check>
-                                <Input type="checkbox" />{' '}
+                                <Input type="checkbox" required/>{' '}
                                     Check me out
                                 </Label>
                             </FormGroup>
