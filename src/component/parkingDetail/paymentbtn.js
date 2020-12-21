@@ -20,8 +20,8 @@ const __DEV__ = document.domain === 'localhost'
 
 function Paymentbtn() {
 	const [name, setName] = useState('Mehul')
-	const [showResults, setShowResults] = useState(false)
-	const handleseatavail = () => setShowResults(true)
+	// const [showResults, setShowResults] = useState(false)
+	// const handleseatavail = () => setShowResults(true)
 	async function displayRazorpay() {
 		const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
 
@@ -61,9 +61,7 @@ function Paymentbtn() {
         return(
             <>
             <div className="btns" >
-            <button onClick={displayRazorpay}>
-                               Book Now
-                            </button>
+            <button onClick={displayRazorpay}> Book Now</button>
             </div>
             
            
