@@ -33,29 +33,31 @@ function Parkdetail() {
             
             <Header />
             <div className="parkbox"> 
-                <h1>Parking Name</h1>
+                <h1>Shyam Parking</h1>
                     <div className="parkdetail">
                         <div className="parkA">
                            <div className="parkAinnerdiv">
-                           <p>Park Name : Acchi wali parking</p>
-                            <p>Address : 1490 Youville Drive</p>
-                            <p>contact numaber : 1234567890</p>
-                            <p>Parking Rate : 20-/hour</p>
+                           <p><b>Seller's Name:</b> Shyam Kumar</p>
+                           <p><b>Contact numaber:</b> 1234567890</p>
+                            <p><b>Address:</b> Arera Colony Bhopal, Madhya Pradesh</p>
+                            <p><b>Parking Rate:</b> 50-/hour</p>
                            </div><br />
                             <div className="btns">
-							<Link to="/booking">
-                               Book Here
-                               
-                            </Link> 
-							&nbsp;  &nbsp;
+
+                            <Link to="/booking">
+                                <button >
+                                    Book Here
+                                </button>
+                            </Link>
+							<hr/>
 							<button >
-                               View in MAP
-                               
+                               View in MAP  
                             </button>  
-							</div><br/>
+							<hr/>
 							<button type="button" className="checkAvailbtn" onClick={handleseatavail} >
 							CheckAvailability 
                             </button>
+                            </div><br/>
 							
                         </div>
                     <div className="parkimg">

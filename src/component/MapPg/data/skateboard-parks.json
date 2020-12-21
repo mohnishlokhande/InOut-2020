@@ -130,9 +130,9 @@
       "properties": {
         "PARK_ID": 1160,
         "FACILITYID": 28007,
-        "NAME": "Queen Park Location",
-        "NAME_FR": "Lieu de planchodrome itinérant",
-        "ADDRESS": "10 Warner Colpitts Lane",
+        "NAME": "Shyam parking",
+        "NAME_FR": "Shyam Kumar",
+        "ADDRESS": "Arera Colony Bhopal, Madhya Pradesh",
         "ADDRESS_FR": "10, ruelle Warner Colpitts",
         "FACILITY_T": "flat",
         "FACILITY_1": "plat",
@@ -152,7 +152,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [84.377586, 24.754860]
+        "coordinates": [77.428900, 23.218170]
       }
     },
     {

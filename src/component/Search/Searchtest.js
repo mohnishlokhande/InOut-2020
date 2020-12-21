@@ -27,7 +27,7 @@ export default class SearchPgtest extends Component{
             // .then((findresponse) =>{
             //     console.log('This is your data', findresponse)
             // })
-            .then(data => this.setState({ posts: data }))
+    //        .then(data => this.setState({ posts: data }))
            .then(posts => {this.setState({posts})
            })
            .then( (err) => {
