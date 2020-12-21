@@ -21,7 +21,7 @@ function booking(req,res) {
     async function test() {
         await time_aray.map(function(time) {
             //var sql2 = "alter table " + table_name + " alter column " + time + " where park_name = " + req.body.park_name;
-            var sql2 = "update " + table_name + " set " + time + " = (" + time + " - " + Seats + " ) where park_name = " + req.body.park_name; 
+            var sql2 = "update " + table_name + " set " + time + " = (" + time + " - " + Seats + " ) where park_name = \"" + req.body.park_name + "\" "; 
     
             con.query(sql2, function (err, result) {
                 if (err) {
@@ -33,14 +33,9 @@ function booking(req,res) {
             booked: "succesfully booked"
         })
     }
-    
-    test();
-
-    
-
-    
+    test();    
 }
 
-
-
 router.post('/', booking);
+
+module.exports = router;

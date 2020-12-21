@@ -84,71 +84,55 @@ router.post('/', (req, res) => {
                                             res.json({
                                                 "result": "table initialised successfully"
 
-                                            })
-                                            
+                                            })    
                                         }
                                     })
                                 }
                             })
-
-
-
-
-
                         }
-
-
                     })
-
-
-
-
-
-                    //initialise the table and makr available 
-                    //send response 
                 }
-
             })
 
         } else {
             //console.log('here2');
             //console.log(err);
-            var sql4 = "select * from " + table_name +  " where park_name = " + req.body.park_name   ;
+            var sql4 = "select * from " + table_name +  " where park_name = \"" + req.body.park_name + "\""   ;
             console.log(sql4);
             con.query(sql4, function (err, result) {
                 if (err) {
-                    
+                    console.log('qwe'); 
                     console.log(err);
                 } else {
                     var from_time = req.body.from_time;
                     console.log(result);
+                    
                     res.json({
-                        "zero_one": res[0].zero_one,
-                        "one_two": res[0].one_two,
-                        "three_four": res[0].three_four,
-                        "five_six": res[0].five_six,
-                        "seven_eight": res[0].seven_eight,
-                        "eight_nine": res[0].eight_nine,
-                        "nine_ten": res[0].nine_ten,
-                        "ten_eleven": res[0].ten_eleven,
-                        "eleven_twelve": res[0].eleven_twelve,
-                        "twleve_thirteen": res[0].twleve_thirteen,
-                        "thirteen_fourteen": res[0].thirteen_fourteen,
-                        "fourteen_fifteen": res[0].fourteen_fifteen,
-                        "fifteen_sixteen": res[0].fifteen_sixteen,
-                        "sixteen_seventeen": res[0].sixteen_seventeen,
-                        "seventeen_eighteen": res[0].seventeen_eighteen,
-                        "eighteen_nineteen": res[0].eighteen_nineteen,
-                        "nineteen_twenty": res[0].nineteen_twenty,
-                        "twenty_twentyone": res[0].twenty_twentyone.park_name,
-                        "twentyone_twentytwo": res[0].twentyone_twentytwo,
-                        "twentytwo_twentythree": res[0].twentytwo_twentythree,
-                        "twentythree_zero": res[0].twentythree_zero
+                        "zero_one": result[0].zero_one,
+                        "one_two": result[0].one_two,
+                        "three_four": result[0].three_four,
+                        "five_six": result[0].five_six,
+                        "seven_eight": result[0].seven_eight,
+                        "eight_nine": result[0].eight_nine,
+                        "nine_ten": result[0].nine_ten,
+                        "ten_eleven": result[0].ten_eleven,
+                        "eleven_twelve": result[0].eleven_twelve,
+                        "twleve_thirteen": result[0].twleve_thirteen,
+                        "thirteen_fourteen": result[0].thirteen_fourteen,
+                        "fourteen_fifteen": result[0].fourteen_fifteen,
+                        "fifteen_sixteen": result[0].fifteen_sixteen,
+                        "sixteen_seventeen": result[0].sixteen_seventeen,
+                        "seventeen_eighteen": result[0].seventeen_eighteen,
+                        "eighteen_nineteen": result[0].eighteen_nineteen,
+                        "nineteen_twenty": result[0].nineteen_twenty,
+                        "twenty_twentyone": result[0].twenty_twentyone.park_name,
+                        "twentyone_twentytwo": result[0].twentyone_twentytwo,
+                        "twentytwo_twentythree": result[0].twentytwo_twentythree,
+                        "twentythree_zero": result[0].twentythree_zero
                     })
 
                 }
             })
-
         }
     })
 })
