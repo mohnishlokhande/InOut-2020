@@ -1,12 +1,16 @@
 .footer{
     color: blue;
-    background-color: black;
+    background-color: #0f0f0f;
     height: 10vh;
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-a:hover{
+
+.viewCode{
+    color: honeydew;
+}
+.viewCode:hover{
     color: green;
 }
