@@ -3,9 +3,9 @@ const { useParams } = require('react-router-dom');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "MSDhoni@0707",   
+    password: "root",   
     port: '3306',
-    database: 'mydb'
+    database: 'inout'
 });
 
 con.connect((err) => {

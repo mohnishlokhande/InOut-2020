@@ -60,12 +60,14 @@ class NavMap extends Component{
                             </Nav>
 
                             <Nav className="logout" navbar>
-                                        <button type="button" className="btn btnlogout"  
+                                <NavLink className="nav-link" to="/">
+                                    <button type="button" className="btn btnlogout"  
                                             // onClick={() => {
                                             //     auth.logout(() => {this.props.history.push("/login");
                                             //     });
                                             // }}
-                                            > Logout</button> 
+                                            > <span className="fa fa-sign-out aa fa-lg"/>Logout</button> 
+                                </NavLink>
                             </Nav>
                         </Collapse>
                     </div>

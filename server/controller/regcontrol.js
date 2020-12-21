@@ -15,7 +15,7 @@ module.exports.register = async (req,res) =>{
         "contact" : req.body.contact
         
     }
-    connection.query('INSERT INTO user SET ?',user,  (error, results, fields) => {
+    connection.query('INSERT INTO users SET ?',user,  (error, results, fields) => {
       if (error) {
         res.json({
             message:'there are some error with query'
