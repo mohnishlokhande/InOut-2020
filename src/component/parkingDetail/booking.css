@@ -1,11 +1,11 @@
 h1 {
     text-align: center;
   }
-  .bookdiv{
+  /* .bookdiv{
       /* display: flex; */
       /* flex-direction: column; */
       /* width: 100vw; */
-  }
+  /* }  */
   .seatsbox {
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@ h1 {
     content: 'AVAILABLE'
   }
   
-  .available {
+  .available, .reserved {
     color: #333;
   }
   
