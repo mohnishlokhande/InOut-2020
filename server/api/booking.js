@@ -9,7 +9,7 @@ let year = date_ob.getFullYear();
 let seconds = date_ob.getSeconds();
 var da = date + "_" + month + "_" + year;
 var DATE = da.toString()
-var table_name = "avail_" + DATE;    
+var table_name = "avail_" + DATE;       
 
 
 function booking(req,res) {
@@ -19,7 +19,7 @@ function booking(req,res) {
     var sql1 = "select * from " + table_name + " where park_name = " + req.body.park_name;
     var time_aray = req.body.time;
     async function test() {
-         await time_aray.map(function(time) {
+        await time_aray.map(function(time) {
             //var sql2 = "alter table " + table_name + " alter column " + time + " where park_name = " + req.body.park_name;
             var sql2 = "update " + table_name + " set " + time + " = (" + time + " - " + Seats + " ) where park_name = " + req.body.park_name; 
     
@@ -28,7 +28,7 @@ function booking(req,res) {
                     console.log(err);
                 }
             })
-         })
+        })
         res.json({
             booked: "succesfully booked"
         })
