@@ -17,4 +17,6 @@ input attributes (input type="text" id="name" name="name" required)
 [git set upstream](https://www.git-tower.com/learn/git/faq/set-upstream/)  
 [How to clone all remote branches in Git?](https://stackoverflow.com/questions/67699/how-to-clone-all-remote-branches-in-git)  
 [git fetch](https://www.javatpoint.com/git-fetch)  
-Database pool https://stackoverflow.com/questions/30545749/how-to-provide-a-mysql-database-connection-in-single-file-in-nodejs, Database wrapper
+Database pool https://stackoverflow.com/questions/30545749/how-to-provide-a-mysql-database-connection-in-single-file-in-nodejs, Database wrapper  
+setTimeout in for loop with var and let  
+[how to export values received from the api](https://stackoverflow.com/questions/55776601/how-to-properly-export-values-retrieved-from-an-api-call-in-nodejs)

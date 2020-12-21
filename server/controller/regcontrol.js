@@ -5,8 +5,8 @@ var connection = require('../mysql');
 
 module.exports.register = async (req,res) =>{
     // var today = new Date();
-    //var encryptedString = cryptr.encrypt(req.body.password);
-  //console.log(req.body.name);
+    // var encryptedString = cryptr.encrypt(req.body.password);
+    //console.log(req.body.name);
     const hashedPass = await bcrypt.hash(req.body.password, 10) //async function returning hashed password to be stored in database
     var user={
         "username":req.body.username,

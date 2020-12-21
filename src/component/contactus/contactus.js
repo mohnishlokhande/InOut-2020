@@ -6,6 +6,7 @@ import Mohnish from '../Image/monu.jpg'
 import Kaushik from '../Image/karuna.png'
 import Profile from '../Image/profilepic.png'
 import NavMap from '../MapPg/Navbar';
+import Footer from '../footer/footer';
 
 
 export default class Contactus extends Component{
@@ -65,8 +66,9 @@ export default class Contactus extends Component{
                     })}
                     
                 </div>
-                <p> For any query email us at appujappu@gmail.com</p>
+                <p> For any query email us at <b>mlkk106inoutteam@gmail.com </b></p>
             </div>
+            <Footer />
             </>
         );
     }

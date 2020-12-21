@@ -25,14 +25,14 @@ module.exports.authenticate = function (req, res) {
             message: 'successfully authenticated'
           })
         } else {
-          res.json({
+          res.send({
             message: "Username and password does not match"
           });
         }
           
       }
       else {
-        res.json({
+        res.send({
           message: "User does not exits"
         });
       }
