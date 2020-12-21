@@ -85,13 +85,13 @@ class DrawGrid extends React.Component {
           <tbody>
               <tr>
                 { this.props.seat.map( row =>
-                  <td 
+                  <b><td 
                     className={this.props.reserved.indexOf(row) > -1? 'reserved': 'available'}
-                    key={row} onClick = {e => this.onClickSeat(row)}>{row} </td>) }
+                    key={row} onClick = {e => this.onClickSeat(row)}>{row} </td></b>) }
               </tr>
           </tbody>
         </table>
-        
+        <br/>
         <AvailableList available = { this.props.available } />
         <Bookedlot reserved = { this.props.reserved } />
         <br />

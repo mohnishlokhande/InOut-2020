@@ -15,7 +15,7 @@ class Select extends Component{
             <div className="outerdivSel">
                 <div className="smap">
                     <button class="btn btn-info">
-                        <Link to="/search" className="btnMap" >Search By Name </Link>                    
+                        <Link to="/searchname" className="btnMap" >Search By Name </Link>                    
                     </button>    
                 </div>
                 <div className="smap">
