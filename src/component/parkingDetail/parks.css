@@ -48,13 +48,12 @@
     padding: 5px 10px;
     outline: none !important;
 }
+
 .btns{
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
 }
-
 /* .checkAvailbtn{
     background-color: #eee;
   color: #444;
