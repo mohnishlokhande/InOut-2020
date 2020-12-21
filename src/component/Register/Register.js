@@ -40,7 +40,7 @@ export default class Register extends Component{
              body: JSON.stringify(this.state)
            }).then(response=>response.json())
            .then(response => console.log(response))
-        .then(err => {
+        .then(err => {  
             console.log(err);
           })
           
