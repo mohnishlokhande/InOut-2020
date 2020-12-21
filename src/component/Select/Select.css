@@ -8,7 +8,10 @@
     flex-direction: row;
 }
 .smap{
-    margin: 12vw;
+    margin-top: 13vw;
+    margin-bottom: 8vw;
+    margin-left: 8vw;
+    margin-right: 8vw;
     
 }
 .contselect{

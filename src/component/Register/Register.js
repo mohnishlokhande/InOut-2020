@@ -104,7 +104,7 @@ export default class Register extends Component{
                             </Row>
                         </FormGroup>
 
-                        <FormGroup className="col-md-12">
+                        <FormGroup className="col-md-12"> 
                             <Row>
                             <Label htmlFor ="password">Password</Label>
                             
