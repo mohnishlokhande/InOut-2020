@@ -15,6 +15,7 @@ import Contactus from './contactus/contactus';
 // import AllBookings from './parkingDetail/booking';
 // import CheckAvailability from './checkavailability';
 import BookNow from './parkingDetail/booking';
+import SearchPgtest from './Search/Searchtest';
 
 class Main extends Component {
     render(){
@@ -37,6 +38,7 @@ class Main extends Component {
                 <Route path="/login" component={Login} />
                 {/* <Route path="/mapOrig" component={Gmap} /> */}
                 <Route path="/search" component={SearchPg} />
+                <Route path="/searchtest" component={SearchPgtest} />
                 <Route path="/select" component={Select} />
                 <Route path="/parkdetail" component={Parkdetail} />
                 <Route path="/SellerReg" component={SellerReg} />

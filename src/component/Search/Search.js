@@ -7,9 +7,28 @@ import Header from '../Header/Header';
 
 export default class SearchPg extends Component{
 
-    state={
-        search: ""
-    }
+    // state={
+    // }
+
+    constructor(props){
+        super(props);
+        this.state={ 
+                posts : [] ,
+                search: ""
+        };
+
+        fetch('http://localhost:9001/parkselection/')
+            .then(response =>{
+                response.json();
+            })
+            .then(posts => {
+                this.setState({posts})
+            })
+            .then( (err) => {
+                console.log(err);
+            })
+        }
+
 
     renderPark = park => {
         const { search } = this.state;
@@ -18,6 +37,7 @@ export default class SearchPg extends Component{
         return (
             <Link to="/parkdetail"><div className="onSearch" style={{ marginTop: "20px" }}>
               <p className="par">{park.properties.NAME}</p>
+              {/* <p className="par">{park.properties.NAME}</p> */}
               <hr/>
                {/* <Card>
                 <CardBody>
